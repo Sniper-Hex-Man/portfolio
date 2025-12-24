@@ -155,19 +155,26 @@ function generateATSCV() {
             useCORS: true,
             logging: false,
             backgroundColor: '#ffffff',
-            // onclone callback to fix mobile rendering issues
+            allowTaint: true,
+            // Fixed dimensions for consistent rendering
+            width: 794,  // A4 width in pixels at 96dpi
+            height: 1123, // A4 height in pixels at 96dpi
+            // onclone callback to fix mobile rendering issues  
             onclone: function (clonedDoc) {
                 const clonedElement = clonedDoc.getElementById('cv-pdf-content');
                 if (clonedElement) {
                     clonedElement.style.margin = '0';
                     clonedElement.style.marginTop = '0';
                     clonedElement.style.paddingTop = '10mm';
-                    clonedElement.style.position = 'relative';
+                    clonedElement.style.position = 'absolute';
                     clonedElement.style.top = '0';
+                    clonedElement.style.left = '0';
                 }
-                // Reset body margin/padding in cloned document
+                // Reset body/html margin/padding in cloned document
                 clonedDoc.body.style.margin = '0';
                 clonedDoc.body.style.padding = '0';
+                clonedDoc.documentElement.style.margin = '0';
+                clonedDoc.documentElement.style.padding = '0';
             }
         },
         jsPDF: {
