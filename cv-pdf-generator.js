@@ -34,8 +34,10 @@ function generateATSCV() {
     // Build HTML content as a complete document string
     const htmlContent = `
         <div id="cv-pdf-content" style="
+            margin: 0;
             width: 190mm;
             padding: 10mm;
+            padding-top: 8mm;
             background: white;
             font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
             direction: ${isRTL ? 'rtl' : 'ltr'};
@@ -43,9 +45,11 @@ function generateATSCV() {
             color: #1f2937;
             line-height: 1.8;
             font-size: 12px;
+            box-sizing: border-box;
         ">
             <style>
-                .cv-header { margin-bottom: 15px; border-bottom: 3px solid #4f46e5; padding-bottom: 12px; }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                .cv-header { margin: 0; margin-bottom: 15px; border-bottom: 3px solid #4f46e5; padding-bottom: 12px; padding-top: 0; }
                 .cv-name { font-size: 26px; font-weight: 800; color: #4f46e5; margin-bottom: 4px; }
                 .cv-title { font-size: 14px; color: #6b7280; }
                 .cv-section { margin-bottom: 18px; }
@@ -142,7 +146,7 @@ function generateATSCV() {
 
     const element = tempDiv.querySelector('#cv-pdf-content');
 
-    // PDF options
+    // PDF options - optimized for consistent rendering across devices
     const opt = {
         margin: 0,
         filename: t.pdf.fileName + '.pdf',
@@ -151,7 +155,11 @@ function generateATSCV() {
             scale: 2,
             useCORS: true,
             logging: false,
-            backgroundColor: '#ffffff'
+            backgroundColor: '#ffffff',
+            scrollX: 0,
+            scrollY: 0,
+            windowWidth: 800,
+            windowHeight: 1200
         },
         jsPDF: {
             unit: 'mm',
