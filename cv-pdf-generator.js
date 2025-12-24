@@ -1,13 +1,107 @@
 // ================================
 // ATS-Friendly CV PDF Generator
-// Using pdfmake for direct PDF generation with Arabic support
+// Using pdfmake with proper Arabic font support
 // ================================
+
+// Track font loading status
+let arabicFontLoaded = false;
+let fontLoadAttempts = 0;
+const MAX_FONT_LOAD_ATTEMPTS = 3;
+
+/**
+ * Reverse Arabic text for proper RTL display in pdfmake
+ * pdfmake doesn't support RTL natively, so we need to reverse word order
+ */
+function reverseArabicText(text) {
+    if (!text) return '';
+
+    // Split by spaces, reverse, and join
+    const words = text.split(' ');
+    return words.reverse().join(' ');
+}
+
+/**
+ * Check if text contains Arabic characters
+ */
+function containsArabic(text) {
+    if (!text) return false;
+    const arabicPattern = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
+    return arabicPattern.test(text);
+}
+
+/**
+ * Process text for RTL if needed
+ */
+function processTextForRTL(text, isRTL) {
+    if (!isRTL || !containsArabic(text)) return text;
+    return reverseArabicText(text);
+}
+
+/**
+ * Convert ArrayBuffer to Base64
+ */
+function arrayBufferToBase64(buffer) {
+    let binary = '';
+    const bytes = new Uint8Array(buffer);
+    const len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binary);
+}
+
+/**
+ * Load Arabic font from embedded base64 data (no CORS issues)
+ */
+function loadArabicFont() {
+    if (arabicFontLoaded) return true;
+
+    try {
+        fontLoadAttempts++;
+        console.log(`Loading embedded Arabic fonts (attempt ${fontLoadAttempts})`);
+
+        // Check if embedded font data exists (Cairo font - same as portfolio)
+        if (typeof CAIRO_REGULAR_BASE64 === 'undefined' || typeof CAIRO_BOLD_BASE64 === 'undefined') {
+            throw new Error('Embedded font data not found. Make sure cairo-font-data.js is loaded.');
+        }
+
+        // Register fonts with pdfmake VFS using embedded base64 data
+        if (!pdfMake.vfs) {
+            pdfMake.vfs = {};
+        }
+        pdfMake.vfs['Cairo-Regular.ttf'] = CAIRO_REGULAR_BASE64;
+        pdfMake.vfs['Cairo-Bold.ttf'] = CAIRO_BOLD_BASE64;
+
+        // Configure fonts
+        pdfMake.fonts = {
+            ArabicFont: {
+                normal: 'Cairo-Regular.ttf',
+                bold: 'Cairo-Bold.ttf',
+                italics: 'Cairo-Regular.ttf',
+                bolditalics: 'Cairo-Bold.ttf'
+            },
+            Roboto: {
+                normal: 'Roboto-Regular.ttf',
+                bold: 'Roboto-Medium.ttf',
+                italics: 'Roboto-Italic.ttf',
+                bolditalics: 'Roboto-MediumItalic.ttf'
+            }
+        };
+
+        arabicFontLoaded = true;
+        console.log('✅ Arabic font (Cairo) loaded successfully from embedded data');
+        return true;
+
+    } catch (error) {
+        console.error('❌ Failed to load embedded Arabic font:', error.message);
+        return false;
+    }
+}
 
 /**
  * Generate ATS-friendly PDF CV based on current language
- * Uses pdfmake for consistent rendering across all devices
  */
-function generateATSCV() {
+async function generateATSCV() {
     const lang = currentLang || 'ar';
     const isRTL = lang === 'ar';
     const t = TRANSLATIONS[lang];
@@ -16,278 +110,255 @@ function generateATSCV() {
     // Calculate years of experience
     const yearsExp = new Date().getFullYear() - cv.startYear;
 
-    // Colors
-    const primaryColor = '#4f46e5';
-    const textColor = '#1f2937';
-    const mutedColor = '#6b7280';
+    // Show loading state on button
+    const downloadBtn = document.getElementById('downloadCVBtn');
+    const originalContent = downloadBtn.innerHTML;
+    downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>' + (isRTL ? 'جاري التحميل...' : 'Loading...') + '</span>';
+    downloadBtn.disabled = true;
 
-    // Build document content
+    try {
+        // Load Arabic font
+        if (isRTL) {
+            const fontLoaded = await loadArabicFont();
+            if (!fontLoaded) {
+                console.warn('Arabic font could not be loaded, using fallback');
+            }
+        }
+
+        // Define colors
+        const primaryColor = '#4f46e5';
+        const textColor = '#1f2937';
+        const lightTextColor = '#6b7280';
+
+        // Helper to process text for RTL
+        const pText = (text) => processTextForRTL(text, isRTL);
+
+        // Choose font based on language
+        const mainFont = (isRTL && arabicFontLoaded) ? 'ArabicFont' : 'Roboto';
+
+        // Build document definition
+        const docDefinition = {
+            pageSize: 'A4',
+            pageMargins: [30, 30, 30, 30],
+            defaultStyle: {
+                font: mainFont,
+                fontSize: 9,
+                color: textColor,
+                lineHeight: 1.3
+            },
+            content: [
+                // Header - Name and Title
+                {
+                    text: pText(t.hero.firstName + ' ' + t.hero.lastName),
+                    fontSize: 22,
+                    bold: true,
+                    color: primaryColor,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 0, 0, 4]
+                },
+                {
+                    text: pText(t.about.heading),
+                    fontSize: 12,
+                    color: lightTextColor,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 0, 0, 8]
+                },
+                {
+                    canvas: [{ type: 'line', x1: 0, y1: 0, x2: 535, y2: 0, lineWidth: 2, lineColor: primaryColor }],
+                    margin: [0, 0, 0, 10]
+                },
+
+                // Contact Section
+                {
+                    text: pText(t.pdf.contact),
+                    fontSize: 13,
+                    bold: true,
+                    color: primaryColor,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 0, 0, 6]
+                },
+                {
+                    columns: isRTL ? [
+                        { text: 'البريد: ' + cv.contact.email, fontSize: 9, alignment: 'right', width: '*' },
+                        { text: 'الهاتف: ' + cv.contact.phone, fontSize: 9, alignment: 'center', width: '*' },
+                        { text: 'الموقع: ' + cv.contact.location[lang], fontSize: 9, alignment: 'left', width: '*' }
+                    ] : [
+                        { text: 'Email: ' + cv.contact.email, fontSize: 9, alignment: 'left', width: '*' },
+                        { text: 'Phone: ' + cv.contact.phone, fontSize: 9, alignment: 'center', width: '*' },
+                        { text: 'Location: ' + cv.contact.location[lang], fontSize: 9, alignment: 'right', width: '*' }
+                    ],
+                    margin: [0, 0, 0, 3]
+                },
+                {
+                    text: 'GitHub: ' + cv.contact.github,
+                    fontSize: 9,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 0, 0, 10]
+                },
+
+                // Summary Section
+                {
+                    text: pText(t.pdf.summary),
+                    fontSize: 13,
+                    bold: true,
+                    color: primaryColor,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 0, 0, 5]
+                },
+                {
+                    text: pText(t.about.desc1),
+                    fontSize: 9,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 0, 0, 10],
+                    lineHeight: 1.4
+                },
+
+                // Skills Section
+                {
+                    text: pText(t.pdf.skills),
+                    fontSize: 13,
+                    bold: true,
+                    color: primaryColor,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 0, 0, 5]
+                },
+                ...buildSkillsContent(cv.skills, lang, isRTL, pText),
+
+                // Experience Section
+                {
+                    text: pText(t.pdf.experience),
+                    fontSize: 13,
+                    bold: true,
+                    color: primaryColor,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 8, 0, 5]
+                },
+                ...buildExperienceContent(cv.experience, lang, isRTL, pText),
+
+                // Education Section
+                {
+                    text: pText(t.pdf.education),
+                    fontSize: 13,
+                    bold: true,
+                    color: primaryColor,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 8, 0, 5]
+                },
+                {
+                    text: pText(cv.education.degree[lang]),
+                    fontSize: 11,
+                    bold: true,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 0, 0, 2]
+                },
+                {
+                    text: pText(cv.education.school[lang]),
+                    fontSize: 9,
+                    alignment: isRTL ? 'right' : 'left',
+                    margin: [0, 0, 0, 2]
+                },
+                {
+                    text: pText(cv.education.date[lang] + ' | ' + cv.education.location[lang]),
+                    fontSize: 9,
+                    color: lightTextColor,
+                    alignment: isRTL ? 'right' : 'left'
+                }
+            ]
+        };
+
+        // Generate and download PDF
+        pdfMake.createPdf(docDefinition).download(t.pdf.fileName + '.pdf');
+        console.log('✅ PDF generated successfully with pdfmake');
+
+    } catch (error) {
+        console.error('PDF generation error:', error);
+        alert(isRTL ? 'حدث خطأ أثناء إنشاء PDF' : 'Error generating PDF');
+    } finally {
+        // Restore button state
+        downloadBtn.innerHTML = originalContent;
+        downloadBtn.disabled = false;
+    }
+}
+
+/**
+ * Build skills content for pdfmake
+ */
+function buildSkillsContent(skills, lang, isRTL, pText) {
     const content = [];
 
-    // === HEADER ===
-    content.push({
-        text: `${t.hero.firstName} ${t.hero.lastName}`,
-        style: 'header',
-        alignment: isRTL ? 'right' : 'left'
-    });
-
-    content.push({
-        text: t.about.heading,
-        style: 'subheader',
-        alignment: isRTL ? 'right' : 'left',
-        margin: [0, 0, 0, 5]
-    });
-
-    content.push({
-        canvas: [{
-            type: 'line',
-            x1: 0, y1: 0,
-            x2: 515, y2: 0,
-            lineWidth: 2,
-            lineColor: primaryColor
-        }],
-        margin: [0, 0, 0, 15]
-    });
-
-    // === CONTACT INFO ===
-    content.push({
-        text: t.pdf.contact,
-        style: 'sectionTitle',
-        alignment: isRTL ? 'right' : 'left'
-    });
-
-    content.push({
-        canvas: [{
-            type: 'line',
-            x1: 0, y1: 0,
-            x2: 515, y2: 0,
-            lineWidth: 0.5,
-            lineColor: primaryColor
-        }],
-        margin: [0, 0, 0, 8]
-    });
-
-    const contactText = [
-        `${isRTL ? 'البريد:' : 'Email:'} ${cv.contact.email}`,
-        `${isRTL ? 'الهاتف:' : 'Phone:'} ${cv.contact.phone}`,
-        `${isRTL ? 'الموقع:' : 'Location:'} ${cv.contact.location[lang]}`,
-        `GitHub: ${cv.contact.github}`
-    ].join('  |  ');
-
-    content.push({
-        text: contactText,
-        style: 'normalText',
-        alignment: isRTL ? 'right' : 'left',
-        margin: [0, 0, 0, 15]
-    });
-
-    // === SUMMARY ===
-    content.push({
-        text: t.pdf.summary,
-        style: 'sectionTitle',
-        alignment: isRTL ? 'right' : 'left'
-    });
-
-    content.push({
-        canvas: [{
-            type: 'line',
-            x1: 0, y1: 0,
-            x2: 515, y2: 0,
-            lineWidth: 0.5,
-            lineColor: primaryColor
-        }],
-        margin: [0, 0, 0, 8]
-    });
-
-    content.push({
-        text: t.about.desc1,
-        style: 'normalText',
-        alignment: isRTL ? 'right' : 'left',
-        margin: [0, 0, 0, 15]
-    });
-
-    // === SKILLS ===
-    content.push({
-        text: t.pdf.skills,
-        style: 'sectionTitle',
-        alignment: isRTL ? 'right' : 'left'
-    });
-
-    content.push({
-        canvas: [{
-            type: 'line',
-            x1: 0, y1: 0,
-            x2: 515, y2: 0,
-            lineWidth: 0.5,
-            lineColor: primaryColor
-        }],
-        margin: [0, 0, 0, 8]
-    });
-
-    Object.keys(cv.skills).forEach(category => {
-        const skillCategory = cv.skills[category];
+    Object.keys(skills).forEach(category => {
+        const skillCategory = skills[category];
         if (!skillCategory.items) return;
 
         const skillNames = skillCategory.items.map(item => {
-            if (item.level) return `${item.name} (${item.rank})`;
+            if (item.level) return item.name + ' (' + item.rank + ')';
             return item.name;
         }).join(' • ');
 
         content.push({
-            text: [
-                { text: skillCategory.title[lang] + ': ', bold: true },
-                { text: skillNames, color: mutedColor }
-            ],
-            style: 'normalText',
+            text: pText(skillCategory.title[lang]) + ':',
+            fontSize: 10,
+            bold: true,
             alignment: isRTL ? 'right' : 'left',
-            margin: [0, 0, 0, 5]
-        });
-    });
-
-    content.push({ text: '', margin: [0, 0, 0, 10] });
-
-    // === EXPERIENCE ===
-    content.push({
-        text: t.pdf.experience,
-        style: 'sectionTitle',
-        alignment: isRTL ? 'right' : 'left'
-    });
-
-    content.push({
-        canvas: [{
-            type: 'line',
-            x1: 0, y1: 0,
-            x2: 515, y2: 0,
-            lineWidth: 0.5,
-            lineColor: primaryColor
-        }],
-        margin: [0, 0, 0, 8]
-    });
-
-    cv.experience.forEach(exp => {
-        content.push({
-            text: exp.title[lang],
-            style: 'jobTitle',
-            alignment: isRTL ? 'right' : 'left'
+            margin: [0, 4, 0, 2]
         });
 
         content.push({
-            text: exp.date[lang],
-            style: 'dateText',
+            text: skillNames,
+            fontSize: 9,
+            color: '#4b5563',
+            alignment: isRTL ? 'right' : 'left',
+            margin: [0, 0, 0, 3]
+        });
+    });
+
+    return content;
+}
+
+/**
+ * Build experience content for pdfmake
+ */
+function buildExperienceContent(experience, lang, isRTL, pText) {
+    const content = [];
+
+    experience.forEach(exp => {
+        content.push({
+            text: pText(exp.title[lang]),
+            fontSize: 11,
+            bold: true,
+            alignment: isRTL ? 'right' : 'left',
+            margin: [0, 5, 0, 2]
+        });
+
+        content.push({
+            text: pText(exp.date[lang]),
+            fontSize: 9,
+            italics: true,
+            color: '#6b7280',
             alignment: isRTL ? 'right' : 'left',
             margin: [0, 0, 0, 3]
         });
 
         content.push({
-            text: exp.description[lang],
-            style: 'normalText',
+            text: pText(exp.description[lang]),
+            fontSize: 9,
             alignment: isRTL ? 'right' : 'left',
-            margin: [0, 0, 0, 5]
+            margin: [0, 0, 0, 3]
         });
 
-        // Experience items as bullet list
-        const itemsList = exp.items.map(item => ({
-            text: item[lang],
-            style: 'bulletItem',
-            alignment: isRTL ? 'right' : 'left'
-        }));
-
-        content.push({
-            ul: itemsList,
-            margin: [isRTL ? 0 : 15, 0, isRTL ? 15 : 0, 10]
+        // Experience items as bullet points
+        exp.items.forEach(item => {
+            content.push({
+                text: (isRTL ? pText(item[lang]) + ' •' : '• ' + item[lang]),
+                fontSize: 9,
+                color: '#4b5563',
+                alignment: isRTL ? 'right' : 'left',
+                margin: isRTL ? [0, 0, 10, 2] : [10, 0, 0, 2]
+            });
         });
     });
 
-    // === EDUCATION ===
-    content.push({
-        text: t.pdf.education,
-        style: 'sectionTitle',
-        alignment: isRTL ? 'right' : 'left'
-    });
-
-    content.push({
-        canvas: [{
-            type: 'line',
-            x1: 0, y1: 0,
-            x2: 515, y2: 0,
-            lineWidth: 0.5,
-            lineColor: primaryColor
-        }],
-        margin: [0, 0, 0, 8]
-    });
-
-    content.push({
-        text: cv.education.degree[lang],
-        style: 'jobTitle',
-        alignment: isRTL ? 'right' : 'left'
-    });
-
-    content.push({
-        text: cv.education.school[lang],
-        style: 'normalText',
-        alignment: isRTL ? 'right' : 'left'
-    });
-
-    content.push({
-        text: `${cv.education.date[lang]} | ${cv.education.location[lang]}`,
-        style: 'dateText',
-        alignment: isRTL ? 'right' : 'left'
-    });
-
-    // Document definition
-    const docDefinition = {
-        pageSize: 'A4',
-        pageMargins: [40, 40, 40, 40],
-        content: content,
-        defaultStyle: {
-            font: 'Roboto',
-            fontSize: 10,
-            lineHeight: 1.3
-        },
-        styles: {
-            header: {
-                fontSize: 24,
-                bold: true,
-                color: primaryColor,
-                margin: [0, 0, 0, 5]
-            },
-            subheader: {
-                fontSize: 12,
-                color: mutedColor,
-                margin: [0, 0, 0, 10]
-            },
-            sectionTitle: {
-                fontSize: 13,
-                bold: true,
-                color: primaryColor,
-                margin: [0, 10, 0, 3]
-            },
-            jobTitle: {
-                fontSize: 12,
-                bold: true,
-                color: textColor,
-                margin: [0, 0, 0, 2]
-            },
-            dateText: {
-                fontSize: 9,
-                italics: true,
-                color: mutedColor
-            },
-            normalText: {
-                fontSize: 10,
-                color: textColor
-            },
-            bulletItem: {
-                fontSize: 9,
-                color: mutedColor,
-                margin: [0, 2, 0, 2]
-            }
-        }
-    };
-
-    // Generate and download PDF
-    pdfMake.createPdf(docDefinition).download(t.pdf.fileName + '.pdf');
-    console.log('✅ PDF generated successfully');
+    return content;
 }
 
 // Initialize download button when DOM is ready
