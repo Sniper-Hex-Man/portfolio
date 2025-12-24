@@ -202,27 +202,30 @@ function generateATSCV() {
 
     // Wait for fonts to load before generating PDF
     document.fonts.ready.then(() => {
-        // Generate PDF with delay to ensure rendering (longer delay for mobile)
-        setTimeout(() => {
-            html2pdf().set(opt).from(element).save().then(() => {
-                // Restore original viewport
-                if (viewport && originalViewport) {
-                    viewport.setAttribute('content', originalViewport);
-                }
-                // Restore scroll position
-                window.scrollTo(originalScrollX, originalScrollY);
-                document.body.removeChild(tempDiv);
-                console.log('✅ PDF generated successfully');
-            }).catch(err => {
-                // Restore original viewport on error too
-                if (viewport && originalViewport) {
-                    viewport.setAttribute('content', originalViewport);
-                }
-                window.scrollTo(originalScrollX, originalScrollY);
-                console.error('PDF generation error:', err);
-                document.body.removeChild(tempDiv);
-            });
-        }, 300);
+        // Wait for next animation frame to ensure rendering is complete
+        requestAnimationFrame(() => {
+            // Additional delay for mobile font rendering (500ms)
+            setTimeout(() => {
+                html2pdf().set(opt).from(element).save().then(() => {
+                    // Restore original viewport
+                    if (viewport && originalViewport) {
+                        viewport.setAttribute('content', originalViewport);
+                    }
+                    // Restore scroll position
+                    window.scrollTo(originalScrollX, originalScrollY);
+                    document.body.removeChild(tempDiv);
+                    console.log('✅ PDF generated successfully');
+                }).catch(err => {
+                    // Restore original viewport on error too
+                    if (viewport && originalViewport) {
+                        viewport.setAttribute('content', originalViewport);
+                    }
+                    window.scrollTo(originalScrollX, originalScrollY);
+                    console.error('PDF generation error:', err);
+                    document.body.removeChild(tempDiv);
+                });
+            }, 500);
+        });
     });
 }
 
