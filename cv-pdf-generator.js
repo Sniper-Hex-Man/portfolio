@@ -140,13 +140,14 @@ function generateATSCV() {
     // Create a temporary container
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
-    // Use visibility:hidden and fixed positioning to ensure proper rendering on all environments
-    tempDiv.style.cssText = 'position: fixed; left: 0; top: 0; z-index: -9999; visibility: hidden; width: 210mm; background: white;';
+    // Use absolute positioning with left:-9999px to hide off-screen
+    // This prevents mobile viewport issues with fixed positioning
+    tempDiv.style.cssText = 'position: absolute; left: -9999px; top: 0; z-index: -9999; width: 210mm; background: white; padding: 0; margin: 0;';
     document.body.appendChild(tempDiv);
 
     const element = tempDiv.querySelector('#cv-pdf-content');
 
-    // PDF options - optimized for consistent rendering across devices
+    // PDF options
     const opt = {
         margin: 0,
         filename: t.pdf.fileName + '.pdf',
@@ -155,11 +156,7 @@ function generateATSCV() {
             scale: 2,
             useCORS: true,
             logging: false,
-            backgroundColor: '#ffffff',
-            scrollX: 0,
-            scrollY: 0,
-            windowWidth: 800,
-            windowHeight: 1200
+            backgroundColor: '#ffffff'
         },
         jsPDF: {
             unit: 'mm',
