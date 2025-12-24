@@ -1,0 +1,294 @@
+{
+    "ACECO": {
+        "title": {
+            "ar": "موقع شركة ACECO للهندسة المعمارية",
+            "en": "ACECO Architecture Company Website"
+        },
+        "category": "web",
+        "tags": [
+            "Laravel",
+            "Website",
+            "SEO",
+            "Architecture"
+        ],
+        "description": {
+            "ar": "قمت بتصميم وتطوير موقع إلكتروني احترافي لشركة ACECO المتخصصة في الهندسة المعمارية والتصميم الداخلي.\n\nأبرز ما تم إنجازه:\n\n• تصميم عصري يعكس هوية الشركة ويبرز مشاريعها المعمارية بشكل جذاب.\n• تحسين محركات البحث (SEO): تطبيق أفضل الممارسات لضمان ظهور الموقع في نتائج البحث الأولى.\n• سرعة تحميل عالية وأداء متميز.\n• تصميم متجاوب يعمل على جميع الأجهزة.",
+            "en": "Designed and developed a professional website for ACECO, specializing in architecture and interior design.\n\nKey achievements:\n\n• Modern design reflecting the company's identity and showcasing architectural projects.\n• SEO optimization: Implemented best practices to ensure top search engine rankings.\n• High loading speed and excellent performance.\n• Responsive design that works on all devices."
+        },
+        "excerpt": {
+            "ar": "موقع احترافي لشركة هندسة معمارية مع تحسين SEO",
+            "en": "Professional website for architecture firm with SEO optimization"
+        }
+    },
+    "BMS": {
+        "title": {
+            "ar": "نظام إدارة المباني والعقارات",
+            "en": "Building Management System"
+        },
+        "category": "web",
+        "tags": [
+            "Laravel",
+            "Livewire",
+            "MySQL",
+            "Dashboard"
+        ],
+        "description": {
+            "ar": "قمت بتطوير نظام متكامل لإدارة المباني يوفّر للمالك رؤية شاملة لكل ممتلكاته العقارية، مع إمكانية متابعة التفاصيل اليومية بسهولة وشفافية.\n\nأبرز مميزات النظام:\n\n• إدارة شاملة للمباني: إضافة، تعديل أو حذف المباني مع تفاصيلها الكاملة.\n• إدارة الوكلاء: تمكين كل وكيل من إدارة مبنى محدد بشكل مستقل، مع صلاحيات خاصة به.\n• متابعة الإيجارات: مراقبة حالات الدفع، التنبيهات حول الإيجارات المتأخرة، وإرسال إشعارات تلقائية.\n• تقارير مالية وتشغيلية: تشمل الرواتب، الإصلاحات، والمصروفات الأخرى.\n• إشعارات وتنبيهات للمالك لضمان متابعة آنية لكل المستجدات.",
+            "en": "Developed a comprehensive building management system that provides owners with a complete view of all their real estate properties, with easy and transparent daily monitoring.\n\nKey features:\n\n• Complete building management: Add, edit or delete buildings with full details.\n• Agent management: Enable each agent to manage a specific building independently with custom permissions.\n• Rent tracking: Monitor payment status, late rent alerts, and automatic notifications.\n• Financial and operational reports: Including salaries, repairs, and other expenses.\n• Notifications and alerts for owners to ensure real-time updates."
+        },
+        "excerpt": {
+            "ar": "نظام متكامل لإدارة المباني والعقارات مع تتبع الإيجارات",
+            "en": "Complete building management system with rent tracking"
+        }
+    },
+    "AI_AUTOMATION": {
+        "title": {
+            "ar": "نظام أتمتة النشر وإدارة المحتوى",
+            "en": "AI Publishing Automation System"
+        },
+        "category": "ai web",
+        "tags": [
+            "AI",
+            "Laravel",
+            "API",
+            "Automation"
+        ],
+        "description": {
+            "ar": "طورت نظاماً متكاملاً للأتمتة يوفّر للشركات والأفراد أداة ذكية لإدارة حضورهم على منصات التواصل الاجتماعي. يعتمد النظام على شات بوت تفاعلي يساعد المستخدم في صياغة محتوى مناسب، ثم يقوم بإنشاء منشورات جاهزة مدعومة بتصاميم وصور ملائمة للموضوع.\n\nيتيح النظام إمكانية:\n\n• النشر المباشر على المنصة المطلوبة بضغطة زر.\n• جدولة المنشورات لاختيار التوقيت الأنسب للنشر.\n• استخدام نماذج جاهزة لمختلف أنواع المحتوى (إعلانات، توعية، مناسبات، إلخ).\n• إضافة نماذج مخصصة تناسب احتياجات كل مستخدم.",
+            "en": "Developed a comprehensive automation system that provides businesses and individuals with a smart tool for managing their social media presence. The system uses an interactive chatbot to help users create appropriate content, then generates ready-made posts with suitable designs and images.\n\nThe system enables:\n\n• Direct publishing to the desired platform with one click.\n• Post scheduling to choose the best publishing time.\n• Using ready templates for various content types (ads, awareness, events, etc.).\n• Adding custom templates to suit each user's needs."
+        },
+        "excerpt": {
+            "ar": "منصة ذكية لإدارة المحتوى والنشر على وسائل التواصل الاجتماعي",
+            "en": "Smart platform for content management and social media publishing"
+        }
+    },
+    "SKYSTARS_LAP": {
+        "title": {
+            "ar": "نظام إدارة مستودعات ومشاغل الخياطة",
+            "en": "Warehouse & Tailoring Workshop System"
+        },
+        "category": "web",
+        "tags": [
+            "Laravel",
+            "Dashboard",
+            "ERP"
+        ],
+        "description": {
+            "ar": "قمت بتطوير نظام متكامل يختص بإدارة عمليات المستودعات ومشاغل الخياطة، صُمم ليغطي مختلف الجوانب التشغيلية والإدارية في مكان واحد.\n\nمكونات النظام تشمل:\n\n• إدارة المبيعات: تسجيل الطلبات ومتابعتها حتى التسليم.\n• متابعة الموردين والعملاء: إدارة بياناتهم ومعاملاتهم بشكل منظم.\n• إدارة الموظفين: متابعة حضورهم، مهامهم وأدائهم.\n• التقارير الشاملة: تقارير مالية وإدارية وتفصيلية لدعم اتخاذ القرار.",
+            "en": "Developed a comprehensive system for managing warehouse operations and tailoring workshops, designed to cover various operational and administrative aspects in one place.\n\nSystem components include:\n\n• Sales management: Recording orders and tracking them until delivery.\n• Supplier and customer tracking: Managing their data and transactions in an organized manner.\n• Employee management: Tracking attendance, tasks and performance.\n• Comprehensive reports: Financial, administrative and detailed reports to support decision making."
+        },
+        "excerpt": {
+            "ar": "نظام متكامل لإدارة المستودعات والمبيعات والموظفين",
+            "en": "Complete system for warehouse, sales and employee management"
+        }
+    },
+    "ALKASSAR_GROUP": {
+        "title": {
+            "ar": "منصة الكسار للاستيراد والتصدير",
+            "en": "ALKASSAR Import & Export Platform"
+        },
+        "category": "web",
+        "tags": [
+            "Laravel",
+            "CMS",
+            "HR System",
+            "Website"
+        ],
+        "description": {
+            "ar": "قمت بتطوير منصة متكاملة لشركة تعمل في مجال الاستيراد والتصدير، تشمل موقعاً إلكترونياً تفاعلياً يعرّف بخدمات الشركة ويعرض منتجاتها، إلى جانب لوحة تحكم (Dashboard) متقدمة لإدارة العمليات الداخلية.\n\nالداشبورد تضم:\n\n• نظام موارد بشرية لإدارة الموظفين، الحضور، والإجازات.\n• نظام إدارة المحتوى (CMS) للتحكم بسهولة في صفحات الموقع وتحديثها.\n• واجهة استخدام بسيطة ومرنة تساعد الفريق على إدارة العمل اليومي بكفاءة.",
+            "en": "Developed a comprehensive platform for an import/export company, including an interactive website introducing company services and products, along with an advanced dashboard for internal operations management.\n\nThe dashboard includes:\n\n• HR system for managing employees, attendance, and leaves.\n• CMS for easy control and updating of website pages.\n• Simple and flexible user interface helping the team manage daily work efficiently."
+        },
+        "excerpt": {
+            "ar": "موقع إلكتروني مع نظام إدارة وموارد بشرية متكامل",
+            "en": "Website with integrated management and HR system"
+        }
+    },
+    "ALMOKHTAR_CLINIC": {
+        "title": {
+            "ar": "منصة المختار الطبية",
+            "en": "Al-Mokhtar Medical Platform"
+        },
+        "category": "web",
+        "tags": [
+            "Laravel",
+            "Healthcare",
+            "Booking System"
+        ],
+        "description": {
+            "ar": "طورت موقعاً إلكترونياً لمجمّع طبي يعرّف بخدمات الأقسام المختلفة ويوفّر واجهة سهلة الاستخدام للزوار والمرضى. إلى جانب الموقع العام، أنشأت لوحة تحكم (Dashboard) تمكّن إدارة المجمع من التحكم الكامل بالمحتوى.\n\nالمنصة تتضمن أنظمة متخصصة مثل:\n\n• نظام الحجوزات الإلكترونية: يتيح للمرضى حجز المواعيد بسهولة وإدارتها عبر المنصة.\n• نظام قسم الليزر: أداة خاصة لإدارة جلسات العملاء، تتبّع تقدمهم، وحفظ السجلات الخاصة بكل مريض.",
+            "en": "Developed a website for a medical complex introducing various department services with an easy-to-use interface for visitors and patients. Along with the public site, I created a dashboard enabling management to fully control content.\n\nThe platform includes specialized systems like:\n\n• Online booking system: Allows patients to easily book and manage appointments.\n• Laser department system: A special tool for managing client sessions, tracking progress, and maintaining patient records."
+        },
+        "excerpt": {
+            "ar": "منصة متكاملة لمجمع طبي مع نظام حجوزات وإدارة المرضى",
+            "en": "Complete medical platform with booking and patient management"
+        }
+    },
+    "HOSPITALS_AGENT": {
+        "title": {
+            "ar": "نظام إدارة المجمعات الطبية مع شات بوت ذكي",
+            "en": "Medical Complex Management with AI Chatbot"
+        },
+        "category": "ai web",
+        "tags": [
+            "AI Chatbot",
+            "Laravel",
+            "Healthcare",
+            "Automation"
+        ],
+        "description": {
+            "ar": "أنشأت نظاماً متكاملاً لإدارة المجمّعات الطبية يهدف إلى رفع كفاءة العمل وتحسين تجربة المرضى عبر حلول تقنية متقدمة. يتميز النظام بوجود شات بوت مدعوم بالذكاء الاصطناعي يعمل على مدار الساعة.\n\nأبرز قدرات الشات بوت:\n\n• تقديم معلومات شاملة عن الأطباء، المواعيد المتاحة، والخدمات الطبية المقدمة.\n• حجز المواعيد مباشرة للمرضى بطريقة سلسة دون الحاجة للتدخل البشري.\n• متابعة المرضى بعد مواعيدهم، عبر التذكير بالعلاجات أو الاستفسار عن حالتهم الصحية.",
+            "en": "Created a comprehensive medical complex management system aimed at improving work efficiency and patient experience through advanced technical solutions. The system features an AI-powered chatbot working 24/7.\n\nKey chatbot capabilities:\n\n• Providing comprehensive information about doctors, available appointments, and medical services.\n• Direct appointment booking for patients seamlessly without human intervention.\n• Patient follow-up after appointments, with treatment reminders or health status inquiries."
+        },
+        "excerpt": {
+            "ar": "شات بوت ذكي لحجز المواعيد ومتابعة المرضى على مدار الساعة",
+            "en": "AI chatbot for booking and patient follow-up 24/7"
+        }
+    },
+    "ABDUDAWOOD_SITE": {
+        "title": {
+            "ar": "موقع جمعية أبو داوود الخيرية",
+            "en": "Abu Dawood Charity Foundation Website"
+        },
+        "category": "web",
+        "tags": [
+            "Laravel",
+            "NGO",
+            "CMS",
+            "Website"
+        ],
+        "description": {
+            "ar": "قمت بتصميم وتطوير الموقع الرسمي لجمعية أبو داوود الخيرية بجدة، ليكون واجهة رقمية تعرّف بأنشطة الجمعية وبرامجها الخيرية.\n\nركّزت في العمل على:\n\n• إبراز هوية الجمعية بطريقة عصرية وسهلة الاستخدام\n• تصميم متجاوب يدعم جميع الأجهزة\n• تطوير أنظمة داخلية خاصة لإدارة بعض أعمالهم",
+            "en": "Designed and developed the official website for Abu Dawood Charity Foundation in Jeddah, to serve as a digital interface introducing the foundation's activities and charitable programs.\n\nI focused on:\n\n• Highlighting the foundation's identity in a modern and user-friendly way\n• Responsive design supporting all devices\n• Developing internal systems for managing some of their operations"
+        },
+        "excerpt": {
+            "ar": "موقع رسمي لجمعية خيرية في جدة مع أنظمة إدارية داخلية",
+            "en": "Official charity foundation website with internal management systems"
+        }
+    },
+    "Peako app": {
+        "title": {
+            "ar": "تطبيق Peako لإدارة ملاعب الأطفال",
+            "en": "Peako - Kids Playground Management App"
+        },
+        "category": "mobile",
+        "tags": [
+            "Flutter",
+            "Firebase",
+            "Real-time",
+            "Parental Control"
+        ],
+        "description": {
+            "ar": "طورت تطبيقاً مبتكراً يسهّل على الأهالي متابعة أبنائهم أثناء زيارتهم لمراكز الألعاب والمنتزهات، ويحوّل التجربة إلى رحلة آمنة ومريحة.\n\nأبرز مميزات التطبيق:\n\n• إدارة بطاقات الألعاب: شحن الرصيد مباشرة عبر التطبيق دون الحاجة للذهاب إلى المركز.\n• المتابعة بالكاميرات: يتيح للآباء مشاهدة أبنائهم داخل المركز ومعرفة مواقعهم لحظة بلحظة.\n• إشعارات الدخول والخروج: يتلقى ولي الأمر تنبيه عند دخول الطفل إلى اللعبة أو مغادرتها.",
+            "en": "Developed an innovative app that helps parents monitor their children during visits to play centers and parks, turning the experience into a safe and comfortable journey.\n\nKey app features:\n\n• Game card management: Recharge balance directly through the app without going to the center.\n• Camera monitoring: Allows parents to watch their children inside the center and know their locations in real-time.\n• Entry/exit notifications: Parents receive alerts when children enter or leave play areas."
+        },
+        "excerpt": {
+            "ar": "تطبيق مبتكر لإدارة ملاعب الأطفال ومتابعة الأبناء بالكاميرات",
+            "en": "Innovative app for playground management and child monitoring"
+        }
+    },
+    "Rasidyphone": {
+        "title": {
+            "ar": "رصيدي فون - تطبيق شحن رصيد وخدمات رقمية",
+            "en": "Rasidy Phone - Mobile Recharge & Digital Services"
+        },
+        "category": "mobile web",
+        "tags": [
+            "Flutter",
+            "Laravel",
+            "Payment",
+            "Dashboard"
+        ],
+        "description": {
+            "ar": "طورت تطبيقاً مخصصاً للسوق اليمني يتيح للمستخدمين شحن رصيد الهواتف المحمولة لمختلف شركات الاتصالات، بالإضافة إلى شراء خدمات رقمية مثل شحن الألعاب والبرامج.\n\nالمشروع يتكون من:\n\n• تطبيق أندرويد سهل الاستخدام يتيح للعملاء الوصول إلى جميع الخدمات في أي وقت.\n• باك إند مبني بلارافل يوفّر أساس قوي لإدارة العمليات والخدمات.\n• لوحة تحكم (Dashboard) متكاملة تتيح إدارة التطبيق بالكامل.",
+            "en": "Developed a dedicated app for the Yemeni market allowing users to recharge mobile phone balance for various telecom companies, plus purchase digital services like game and software credits.\n\nThe project consists of:\n\n• Easy-to-use Android app allowing customers to access all services anytime.\n• Laravel backend providing a solid foundation for operations and services management.\n• Comprehensive dashboard for complete app management."
+        },
+        "excerpt": {
+            "ar": "تطبيق شحن رصيد وخدمات رقمية مع لوحة تحكم متكاملة",
+            "en": "Mobile recharge and digital services app with dashboard"
+        }
+    },
+    "darzApp": {
+        "title": {
+            "ar": "نظام درز للخياطين",
+            "en": "Darz Tailoring Management System"
+        },
+        "category": "mobile web",
+        "tags": [
+            "Flutter",
+            "Laravel",
+            "Tailoring",
+            "Dashboard"
+        ],
+        "description": {
+            "ar": "طورت نظاماً متخصصاً يستهدف الخياطين في السوق السعودي، بعد دراسة احتياجاتهم وتجميع ملاحظات من أصحاب المحلات مباشرة لضمان توافقه مع طبيعة عملهم.\n\nالمشروع مبني على:\n\n• الفرونت إند: Flutter لتقديم تطبيق متجاوب وسهل الاستخدام على مختلف الأجهزة.\n• الباك إند: Laravel لتوفير أداء قوي وإدارة بيانات مرنة.\n• لوحة تحكم (Dashboard) لإدارة المحلات والطلبات.",
+            "en": "Developed a specialized system targeting tailors in the Saudi market, after studying their needs and collecting feedback from shop owners directly to ensure compatibility with their work nature.\n\nThe project is built on:\n\n• Frontend: Flutter for a responsive and easy-to-use app on various devices.\n• Backend: Laravel for powerful performance and flexible data management.\n• Dashboard for managing shops and orders."
+        },
+        "excerpt": {
+            "ar": "نظام متخصص لإدارة الخياطين في السوق السعودي",
+            "en": "Specialized system for tailors in the Saudi market"
+        }
+    },
+    "lostThingsApp": {
+        "title": {
+            "ar": "تطبيق المفقودات",
+            "en": "Lost & Found App"
+        },
+        "category": "mobile",
+        "tags": [
+            "Flutter",
+            "Laravel",
+            "MySQL",
+            "Community"
+        ],
+        "description": {
+            "ar": "طورت تطبيقاً يهدف إلى مساعدة الأشخاص في إيجاد أغراضهم المفقودة والتبليغ عن الأشياء التي يتم العثور عليها، ليكون بمثابة حلقة وصل بين المالك ومن يعثر على الغرض.\n\nمن الناحية التقنية:\n\n• الفرونت إند: بُني باستخدام Flutter (بلغة Dart) لتوفير تطبيق متجاوب وعملي.\n• الباك إند: مطور باستخدام Laravel مع قاعدة بيانات MySQL لضمان سرعة الأداء.",
+            "en": "Developed an app aimed at helping people find their lost items and report found items, serving as a link between owners and finders.\n\nTechnically:\n\n• Frontend: Built using Flutter (Dart) for a responsive and practical app.\n• Backend: Developed using Laravel with MySQL database for performance."
+        },
+        "excerpt": {
+            "ar": "تطبيق لإيجاد المفقودات والتبليغ عنها ومساعدة الآخرين",
+            "en": "App for finding lost items and helping others"
+        }
+    },
+    "towApp": {
+        "title": {
+            "ar": "تطبيق مشاركة الرحلات",
+            "en": "Ride Sharing App"
+        },
+        "category": "mobile",
+        "tags": [
+            "Flutter",
+            "Firebase",
+            "Ride Sharing",
+            "Graduation Project"
+        ],
+        "description": {
+            "ar": "طورت تطبيق أندرويد كفكرة مبتكرة شبيهة بخدمات النقل مثل \"كريم\" و\"أوبر\"، لكن مع إضافة بعد اجتماعي جديد قائم على مشاركة الرحلات الطويلة بدلاً من التنقل داخل المدن فقط.\n\nآلية عمل التطبيق:\n\n• أي شخص مسافر من مدينة إلى أخرى يمكنه إنشاء رحلة داخل التطبيق.\n• الأشخاص الذين يبحثون عن وسيلة نقل يتلقون إشعاراً بالرحلة المتاحة.\n• يمكن اختيار الانضمام إلى الرحلة مجاناً أو مقابل مشاركة التكاليف.\n\nالمشروع يبرز كحل عملي يجمع بين النقل المشترك والمجتمع التفاعلي - مشروع تخرج.",
+            "en": "Developed an Android app as an innovative concept similar to transport services like Careem and Uber, but with a new social dimension based on sharing long trips rather than just city commutes.\n\nHow it works:\n\n• Anyone traveling from city to city can create a trip in the app.\n• People looking for transport receive notifications about available trips.\n• You can join trips for free or share costs.\n\nThe project stands as a practical solution combining shared transport and interactive community - Graduation Project."
+        },
+        "excerpt": {
+            "ar": "مشروع تخرج - تطبيق مشاركة الرحلات الطويلة بين المدن",
+            "en": "Graduation Project - Long-distance ride sharing app"
+        }
+    },
+    "wakeelApp": {
+        "title": {
+            "ar": "تطبيق وكيل لإدارة العمائر",
+            "en": "Wakeel Property Management App"
+        },
+        "category": "mobile",
+        "tags": [
+            "Flutter",
+            "Firebase",
+            "Property Management",
+            "WhatsApp Integration"
+        ],
+        "description": {
+            "ar": "طورت تطبيقاً بسيطاً وعملياً يساعد ملاك العمائر على إدارة المستأجرين ومتابعة الإيجارات بسهولة دون الحاجة للتعامل الورقي.\n\nمميزات التطبيق:\n\n• إدارة المستأجرين: تسجيل بيانات المستأجرين ومتابعة حالة الدفع لكل واحد منهم.\n• حساب الإيجارات: توضيح المستأجرين الذين سددوا والذين لم يسددوا بعد.\n• حساب التكاليف الإضافية: مثل استهلاك الماء والكهرباء لكل شقة.\n• إشعارات وتنبيهات آلية: إرسال رسائل نصية أو عبر واتساب للمستأجرين عند حلول موعد السداد.",
+            "en": "Developed a simple and practical app that helps building owners manage tenants and track rent easily without paperwork.\n\nApp features:\n\n• Tenant management: Register tenant data and track payment status for each one.\n• Rent calculation: Show which tenants have paid and who hasn't yet.\n• Additional costs calculation: Like water and electricity consumption per apartment.\n• Automatic notifications: Send SMS or WhatsApp messages to tenants when payment is due."
+        },
+        "excerpt": {
+            "ar": "تطبيق بسيط لإدارة العمائر والمستأجرين ومتابعة الإيجارات",
+            "en": "Simple app for building and tenant management"
+        }
+    }
+}
