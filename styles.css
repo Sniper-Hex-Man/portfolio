@@ -596,7 +596,7 @@ body {
 }
 
 
-.hero-social {
+.hero-quick-links {
     display: flex;
     gap: 15px;
 }
@@ -1601,7 +1601,7 @@ body {
     }
 
     .hero-cta,
-    .hero-social {
+    .hero-quick-links {
         justify-content: center;
     }
 
