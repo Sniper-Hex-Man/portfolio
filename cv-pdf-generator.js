@@ -136,7 +136,8 @@ function generateATSCV() {
     // Create a temporary container
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
-    tempDiv.style.cssText = 'position: absolute; left: 0; top: 0; z-index: -1; opacity: 0;';
+    // Use visibility:hidden and fixed positioning to ensure proper rendering on all environments
+    tempDiv.style.cssText = 'position: fixed; left: 0; top: 0; z-index: -9999; visibility: hidden; width: 210mm; background: white;';
     document.body.appendChild(tempDiv);
 
     const element = tempDiv.querySelector('#cv-pdf-content');
@@ -159,16 +160,19 @@ function generateATSCV() {
         }
     };
 
-    // Generate PDF with delay to ensure rendering
-    setTimeout(() => {
-        html2pdf().set(opt).from(element).save().then(() => {
-            document.body.removeChild(tempDiv);
-            console.log('✅ PDF generated successfully');
-        }).catch(err => {
-            console.error('PDF generation error:', err);
-            document.body.removeChild(tempDiv);
-        });
-    }, 100);
+    // Wait for fonts to load before generating PDF
+    document.fonts.ready.then(() => {
+        // Generate PDF with delay to ensure rendering
+        setTimeout(() => {
+            html2pdf().set(opt).from(element).save().then(() => {
+                document.body.removeChild(tempDiv);
+                console.log('✅ PDF generated successfully');
+            }).catch(err => {
+                console.error('PDF generation error:', err);
+                document.body.removeChild(tempDiv);
+            });
+        }, 150);
+    });
 }
 
 // Initialize download button when DOM is ready
