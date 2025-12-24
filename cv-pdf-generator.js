@@ -140,9 +140,7 @@ function generateATSCV() {
     // Create a temporary container
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = htmlContent;
-    // Use absolute positioning with left:-9999px to hide off-screen
-    // This prevents mobile viewport issues with fixed positioning
-    tempDiv.style.cssText = 'position: absolute; left: -9999px; top: 0; z-index: -9999; width: 210mm; background: white; padding: 0; margin: 0;';
+    tempDiv.style.cssText = 'position: absolute; left: 0; top: 0; z-index: -1; opacity: 0;';
     document.body.appendChild(tempDiv);
 
     const element = tempDiv.querySelector('#cv-pdf-content');
@@ -165,18 +163,45 @@ function generateATSCV() {
         }
     };
 
+    // Save original viewport for mobile fix
+    const viewport = document.querySelector('meta[name="viewport"]');
+    const originalViewport = viewport ? viewport.getAttribute('content') : null;
+
+    // Save scroll position
+    const originalScrollX = window.scrollX;
+    const originalScrollY = window.scrollY;
+
+    // Temporarily set desktop viewport for consistent rendering
+    if (viewport) {
+        viewport.setAttribute('content', 'width=1200');
+    }
+
+    // Scroll to top-left for consistent rendering
+    window.scrollTo(0, 0);
+
     // Wait for fonts to load before generating PDF
     document.fonts.ready.then(() => {
-        // Generate PDF with delay to ensure rendering
+        // Generate PDF with delay to ensure rendering (longer delay for mobile)
         setTimeout(() => {
             html2pdf().set(opt).from(element).save().then(() => {
+                // Restore original viewport
+                if (viewport && originalViewport) {
+                    viewport.setAttribute('content', originalViewport);
+                }
+                // Restore scroll position
+                window.scrollTo(originalScrollX, originalScrollY);
                 document.body.removeChild(tempDiv);
                 console.log('✅ PDF generated successfully');
             }).catch(err => {
+                // Restore original viewport on error too
+                if (viewport && originalViewport) {
+                    viewport.setAttribute('content', originalViewport);
+                }
+                window.scrollTo(originalScrollX, originalScrollY);
                 console.error('PDF generation error:', err);
                 document.body.removeChild(tempDiv);
             });
-        }, 150);
+        }, 300);
     });
 }
 
