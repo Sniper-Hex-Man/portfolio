@@ -35,7 +35,9 @@ function generateATSCV() {
     const htmlContent = `
         <div id="cv-pdf-content" style="
             width: 190mm;
+            margin: 0;
             padding: 10mm;
+            padding-top: 8mm;
             background: white;
             font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
             direction: ${isRTL ? 'rtl' : 'ltr'};
@@ -43,10 +45,12 @@ function generateATSCV() {
             color: #1f2937;
             line-height: 1.8;
             font-size: 12px;
+            box-sizing: border-box;
         ">
             <style>
-                .cv-header { margin-bottom: 15px; border-bottom: 3px solid #4f46e5; padding-bottom: 12px; }
-                .cv-name { font-size: 26px; font-weight: 800; color: #4f46e5; margin-bottom: 4px; }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                .cv-header { margin-top: 0; margin-bottom: 15px; border-bottom: 3px solid #4f46e5; padding-bottom: 12px; padding-top: 0; }
+                .cv-name { font-size: 26px; font-weight: 800; color: #4f46e5; margin-bottom: 4px; margin-top: 0; }
                 .cv-title { font-size: 14px; color: #6b7280; }
                 .cv-section { margin-bottom: 18px; }
                 .cv-section-title { font-size: 14px; font-weight: 700; color: #4f46e5; border-bottom: 2px solid #4f46e5; padding-bottom: 4px; margin-bottom: 10px; }
@@ -161,6 +165,10 @@ function generateATSCV() {
     };
 
     // Wait for fonts to load before generating PDF
+    // Use longer timeout for mobile devices
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const renderDelay = isMobile ? 400 : 200;
+
     document.fonts.ready.then(() => {
         // Generate PDF with delay to ensure rendering
         setTimeout(() => {
@@ -171,7 +179,7 @@ function generateATSCV() {
                 console.error('PDF generation error:', err);
                 document.body.removeChild(tempDiv);
             });
-        }, 150);
+        }, renderDelay);
     });
 }
 
