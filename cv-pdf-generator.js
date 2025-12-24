@@ -154,7 +154,21 @@ function generateATSCV() {
             scale: 2,
             useCORS: true,
             logging: false,
-            backgroundColor: '#ffffff'
+            backgroundColor: '#ffffff',
+            // onclone callback to fix mobile rendering issues
+            onclone: function (clonedDoc) {
+                const clonedElement = clonedDoc.getElementById('cv-pdf-content');
+                if (clonedElement) {
+                    clonedElement.style.margin = '0';
+                    clonedElement.style.marginTop = '0';
+                    clonedElement.style.paddingTop = '10mm';
+                    clonedElement.style.position = 'relative';
+                    clonedElement.style.top = '0';
+                }
+                // Reset body margin/padding in cloned document
+                clonedDoc.body.style.margin = '0';
+                clonedDoc.body.style.padding = '0';
+            }
         },
         jsPDF: {
             unit: 'mm',
