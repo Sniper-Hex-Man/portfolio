@@ -325,8 +325,8 @@ function initializeContact() {
     const ctaBtn = document.getElementById('ctaWhatsappBtn');
     if (ctaBtn) {
         const msg = currentLang === 'ar'
-            ? 'مرحباً أكرم، أود مناقشة مشروع معك'
-            : 'Hi Akram, I would like to discuss a project with you';
+            ? 'ألسلام عليكم ورحمة الله وبركاته \nكيفك ياهندسة؟\nعندي موضوع اناقشه معك لو فاضي🤗'
+            : 'Hi,\n I would like to discuss a project with you\n🤗';
         ctaBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
     }
 
