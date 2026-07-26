@@ -4,7 +4,7 @@
 
 // Global State Variables
 let currentLanguage = 'ar';
-let currentTheme = 'dark';
+let currentTheme = 'light';
 let currentProject = null;
 let currentImageIndex = 0;
 let projectImages = [];
@@ -40,6 +40,8 @@ function initTheme() {
     const savedTheme = localStorage.getItem('portfolio_theme');
     if (savedTheme && (savedTheme === 'dark' || savedTheme === 'light')) {
         currentTheme = savedTheme;
+    } else {
+        currentTheme = 'light';
     }
     applyTheme(currentTheme);
 }
