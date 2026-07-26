@@ -16,7 +16,7 @@ const TYPEWRITER_ROLES = {
         "Full-Stack Architect",
         "خبير Laravel & Livewire",
         "مهندس تطبيقات Flutter",
-        "مطور شبكات ودسكتاوب Electron",
+        "مطور شبكات ودسكتوب Electron",
         "متخصص ذكاء اصطناعي AI"
     ],
     en: [
@@ -267,7 +267,7 @@ function loadSkillsData() {
                             <div class="skill-item">
                                 <div class="skill-header">
                                     <span class="skill-name">${skill.name}</span>
-                                    <span class="skill-level">${skill.rank || skill.level + '%'}</span>
+                                    <span class="skill-level">${currentLanguage === 'ar' ? (skill.rank === 'Senior' || !skill.rank ? 'خبير' : skill.rank) : (skill.rank || 'Senior')}</span>
                                 </div>
                                 <div class="skill-bar">
                                     <div class="skill-progress" data-progress="${skill.level}" style="width: 0%;"></div>
@@ -309,9 +309,9 @@ function loadExperienceData() {
                     <p class="timeline-description">${desc}</p>
                     <ul class="timeline-list">
                         ${exp.items.map(item => {
-                            const itemText = typeof item === 'object' ? (item[currentLanguage] || item.en) : item;
-                            return `<li><i class="fas fa-check-circle"></i> <span>${itemText}</span></li>`;
-                        }).join('')}
+            const itemText = typeof item === 'object' ? (item[currentLanguage] || item.en) : item;
+            return `<li><i class="fas fa-check-circle"></i> <span>${itemText}</span></li>`;
+        }).join('')}
                     </ul>
                 </div>
             </div>

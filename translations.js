@@ -118,7 +118,9 @@ const TRANSLATIONS = {
             title: 'السيرة الذاتية الاحترافية',
             contact: 'معلومات التواصل',
             summary: 'الملخص المهني',
+            highlights: 'أبرز المنجزات والإحصائيات',
             skills: 'المهارات والتقنيات',
+            featuredProjects: 'أبرز المشاريع والأنظمة المؤسسية',
             experience: 'الخبرات والمسيرة',
             education: 'المؤهل الأكاديمي',
             present: 'حتى الآن'
@@ -240,7 +242,9 @@ const TRANSLATIONS = {
             title: 'Curriculum Vitae',
             contact: 'Contact Info',
             summary: 'Executive Summary',
+            highlights: 'Key Highlights & Metrics',
             skills: 'Technical Expertise',
+            featuredProjects: 'Featured Enterprise Systems',
             experience: 'Work History',
             education: 'Education',
             present: 'Present'
