@@ -16,185 +16,206 @@ const CV_DATA = {
     "backend": {
       "icon": "fas fa-server",
       "title": {
-        "ar": "تطوير الباك إند",
-        "en": "Backend Development"
+        "ar": "تطوير الباك إند والأنظمة",
+        "en": "Backend & Cloud Architecture"
       },
       "items": [
         {
-          "name": "Laravel",
+          "name": "Laravel & Livewire",
           "level": 100,
           "rank": "Senior"
         },
         {
-          "name": "Livewire",
+          "name": "Node.js & Express",
+          "level": 90,
+          "rank": "Senior"
+        },
+        {
+          "name": "MySQL & Database Indexing",
           "level": 100,
           "rank": "Senior"
         },
         {
-          "name": "MySQL",
-          "level": 100,
+          "name": "SQLite & Embedded DBs",
+          "level": 95,
           "rank": "Senior"
         },
         {
-          "name": "NoSQL",
-          "level": 60,
-          "rank": "Mid-level"
+          "name": "REST APIs & SingleFlight",
+          "level": 95,
+          "rank": "Senior"
         },
         {
-          "name": ".NET Core",
-          "level": 40,
-          "rank": "Junior"
+          "name": "Firebase & NoSQL",
+          "level": 90,
+          "rank": "Senior"
         }
       ]
     },
     "frontend": {
-      "icon": "fas fa-palette",
+      "icon": "fas fa-laptop-code",
       "title": {
-        "ar": "تطوير الفرونت إند",
-        "en": "Frontend Development"
+        "ar": "تطوير الفرونت إند والواجهات",
+        "en": "Frontend & Modern Web UI"
       },
       "items": [
         {
-          "name": "HTML & CSS",
+          "name": "Next.js (App Router)",
+          "level": 95,
+          "rank": "Senior"
+        },
+        {
+          "name": "React 19 & Hooks",
+          "level": 90,
+          "rank": "Senior"
+        },
+        {
+          "name": "TypeScript",
+          "level": 90,
+          "rank": "Senior"
+        },
+        {
+          "name": "TailwindCSS",
           "level": 100,
           "rank": "Senior"
         },
         {
-          "name": "JavaScript",
-          "level": 70,
-          "rank": "Mid-level"
+          "name": "JavaScript (ES6+)",
+          "level": 95,
+          "rank": "Senior"
+        },
+        {
+          "name": "HTML5 & Modern CSS3",
+          "level": 100,
+          "rank": "Senior"
         }
       ]
     },
-    "mobile": {
-      "icon": "fas fa-mobile-alt",
+    "mobile_desktop": {
+      "icon": "fas fa-mobile-screen-button",
       "title": {
-        "ar": "تطوير الموبايل",
-        "en": "Mobile Development"
+        "ar": "تطبيقات الموبايل والدسكتوب",
+        "en": "Mobile & Desktop Apps"
       },
       "items": [
         {
-          "name": "Flutter",
+          "name": "Flutter (Dart)",
           "level": 100,
           "rank": "Senior"
         },
         {
-          "name": "Firebase",
-          "level": 100,
+          "name": "Electron.js (Desktop)",
+          "level": 90,
+          "rank": "Senior"
+        },
+        {
+          "name": "Firebase FCM & Real-time Sync",
+          "level": 95,
+          "rank": "Senior"
+        },
+        {
+          "name": "Vite & Alpine.js",
+          "level": 85,
           "rank": "Senior"
         }
       ]
     },
     "tools": {
-      "icon": "fas fa-tools",
+      "icon": "fas fa-microchip",
       "title": {
-        "ar": "الأدوات والتقنيات",
-        "en": "Tools & Technologies"
+        "ar": "التقنيات والأدوات الذكية",
+        "en": "Tools, AI & Analytics"
       },
       "items": [
         {
-          "name": "Git",
-          "icon": "fab fa-git-alt"
+          "name": "Next.js",
+          "icon": "fab fa-react"
+        },
+        {
+          "name": "React 19",
+          "icon": "fab fa-react"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "fas fa-code"
         },
         {
           "name": "Laravel",
           "icon": "fab fa-laravel"
         },
         {
-          "name": "Firebase",
-          "icon": "fas fa-fire"
+          "name": "Node.js",
+          "icon": "fab fa-node-js"
         },
         {
-          "name": "MySQL",
-          "icon": "fas fa-database"
+          "name": "Flutter",
+          "icon": "fas fa-mobile-alt"
         },
         {
-          "name": "REST APIs",
-          "icon": "fas fa-cloud"
+          "name": "Electron.js",
+          "icon": "fas fa-desktop"
         },
         {
           "name": "AI Integration",
           "icon": "fas fa-robot"
+        },
+        {
+          "name": "TailwindCSS",
+          "icon": "fas fa-palette"
+        },
+        {
+          "name": "Recharts & BI",
+          "icon": "fas fa-chart-line"
+        },
+        {
+          "name": "ExcelJS & Reports",
+          "icon": "fas fa-file-excel"
+        },
+        {
+          "name": "Git & Security",
+          "icon": "fab fa-git-alt"
         }
       ]
     }
   },
   "experience": [
     {
-      "id": "webDev",
+      "id": "fullstackDev",
       "icon": "fas fa-code",
       "title": {
-        "ar": "مطور ويب أول",
-        "en": "Senior Web Developer"
-      },
-      "date": {
-        "ar": "2017 - الآن",
-        "en": "2017 - Present"
-      },
-      "description": {
-        "ar": "تطوير وصيانة المواقع وتطبيقات الويب مما أدى إلى زيادة الكفاءة والإنتاجية",
-        "en": "Developing and maintaining websites and web applications, increasing efficiency and productivity"
-      },
-      "items": [
-        {
-          "ar": "تصميم وتطوير أكثر من 10 مواقع باستخدام Laravel",
-          "en": "Designed and developed 10+ websites using Laravel"
-        },
-        {
-          "ar": "تطوير أكثر من 20 تطبيق ويب باستخدام Laravel, Livewire, and JavaScript",
-          "en": "Developed 20+ web applications using Laravel, Livewire, and JavaScript"
-        },
-        {
-          "ar": "بناء صفحات SPA باستخدام نظام Laravel و Livewire",
-          "en": "Built SPA pages using Laravel and Livewire system"
-        },
-        {
-          "ar": "تطبيق Git للتحكم بالمصادر والتعاون الجماعي",
-          "en": "Applied Git for source control and team collaboration"
-        }
-      ]
-    },
-    {
-      "id": "mobileDev",
-      "icon": "fas fa-mobile-alt",
-      "title": {
-        "ar": "مطور تطبيقات موبايل أول",
-        "en": "Senior Mobile Application Developer"
+        "ar": "مهندس ومطور برمجيات أول (Senior Full-Stack Engineer)",
+        "en": "Senior Full-Stack & Systems Engineer"
       },
       "date": {
         "ar": "2018 - الآن",
         "en": "2018 - Present"
       },
       "description": {
-        "ar": "تطوير وصيانة تطبيقات Android لعملاء مختلفين في اليمن والسعودية",
-        "en": "Developing and maintaining Android applications for various clients in Yemen and Saudi Arabia"
+        "ar": "تطوير وبناء الأنظمة المؤسسية المعقدة وتطبيقات الويب والموبايل والدسكتوب عالية الأداء بالسعودية والخليج",
+        "en": "Designing and engineering enterprise systems, high-concurrency web portals, cross-platform mobile & desktop apps"
       },
       "items": [
         {
-          "ar": "بناء وتطوير تطبيقات الدفع والفوترة",
-          "en": "Built and developed payment and billing applications"
+          "ar": "بناء منظومات تقارير إدارية وتحليلات أعمال BI متقدمة باستعمال Next.js 16, React 19, Node.js وGoogle AI",
+          "en": "Built enterprise BI reporting suites and predictive executive dashboards using Next.js 16, React 19, Node.js & Google AI"
         },
         {
-          "ar": "تطوير وصيانة تطبيقات الخدمات الاجتماعية",
-          "en": "Developed and maintained social service applications"
+          "ar": "تصميم وتطوير أكثر من 15 موقعاً ومنصة مؤسسية باستخدام Laravel, Livewire, & React",
+          "en": "Designed and developed 15+ corporate platforms & enterprise systems using Laravel, Livewire, and React"
         },
         {
-          "ar": "التعاون مع فريق من المطورين لإدارة مشاريع متعددة",
-          "en": "Collaborated with a team of developers to manage multiple projects"
+          "ar": "تطوير أكثر من 20 تطبيق موبايل وتطبيقات دسكتاوب تفاعلية باستخدام Flutter و Electron.js",
+          "en": "Developed 20+ mobile apps and desktop applications using Flutter and Electron.js"
         },
         {
-          "ar": "بناء وتطوير أكثر من 20 تطبيق Android باستخدام Flutter و Laravel كـ API",
-          "en": "Built and developed 20+ Android apps using Flutter and Laravel as API"
-        },
-        {
-          "ar": "تطوير تطبيق Real-time باستخدام Flutter و Firebase",
-          "en": "Developed Real-time applications using Flutter and Firebase"
+          "ar": "تطبيق خوارزميات البحث السريعة (Fuzzy Search)، وأدوات تصدير التقارير المعقدة (ExcelJS)، ومعمارية الأمان المحكمة (RBAC)",
+          "en": "Engineered instant Fuzzy Search engines, ExcelJS report automation, and granular RBAC security frameworks"
         }
       ]
     }
   ],
   "education": {
-    "icon": "fas fa-university",
+    "icon": "fas fa-graduation-cap",
     "degree": {
       "ar": "بكالوريوس تقنية المعلومات",
       "en": "Bachelor of Information Technology"

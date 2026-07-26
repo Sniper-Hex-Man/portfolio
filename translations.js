@@ -20,107 +20,108 @@ const TRANSLATIONS = {
             firstName: 'أكرم',
             lastName: 'عبدالله',
             titlePrefix: 'مطور',
-            description: 'أبني حلولاً برمجية متكاملة للويب والموبايل باستخدام أحدث التقنيات.',
+            description: 'مهندس برمجيات متخصص في بناء المنظومات المعقدة، الويب والموبايل والحلول الذكية بأعلى معايير الجودة والأمان.',
             yearsExp: 'سنوات',
-            expSuffix: 'من الخبرة في تطوير أنظمة متقدمة للسوق السعودي والعالمي.',
-            btnProjects: 'استكشف أعمالي',
+            expSuffix: 'من الخبرة في تطوير أنظمة متقدمة وحلول مؤسسية للسوق السعودي والعالمي.',
+            btnProjects: 'استكشف الأعمال',
             btnContact: 'تواصل معي',
-            available: 'متاح للعمل',
+            available: 'متاح للمشاريع والعمل المحترف',
             scrollMore: 'اكتشف المزيد'
         },
 
         // About Section
         about: {
-            tag: '01',
             title: 'من أنا',
-            heading: 'مطور برمجيات متكامل',
-            desc1: 'كمطور Full-Stack محترف، أتخصص في بناء حلول برمجية متطورة لمنصات الويب والموبايل وسطح المكتب. أتقن لغات البرمجة مثل Dart, PHP, HTML, CSS، مع خبرة واسعة في أطر العمل مثل Laravel وإدارة قواعد البيانات باستخدام MySQL.',
-            desc2: 'نجحت في تسليم مشاريع عالية التأثير للسوق السعودي وعملاء دوليين، وأركز على إنشاء أنظمة قوية وقابلة للتوسع، بما في ذلك أنظمة المصادقة الآمنة، ومزامنة البيانات في الوقت الفعلي، وتصميم APIs عالية الأداء.',
-            security: 'أمان متقدم',
-            realtime: 'Real-time Systems',
-            cleanCode: 'كود نظيف',
+            heading: 'مهندس ومطور برمجيات متكامل (Senior Full-Stack)',
+            desc1: 'مطور برمجيات أول بخبرة تزيد عن 7 سنوات، أتخصص في تصميم وتطوير الأنظمة والتطبيقات المعقدة للويب والموبايل والمؤسسات. أتقن لغات وأطر عمل قوية مثل Laravel, Livewire, Flutter, Node.js, MySQL, وFirebase.',
+            desc2: 'صممت وسلّمت أكثر من 30 مشروعاً ناجحاً في القطاعات التجارية والطبية والخدمية بالسوق السعودي واليمني والخليجي، مع التركيز التام على بنية الكود (Architecture)، الأمان، والسرعة الفائقة.',
+            security: 'أمان وتشفير متقدم',
+            realtime: 'أنظمة Real-time قوية',
+            cleanCode: 'Clean Architecture & Code',
             stats: {
                 years: 'سنوات خبرة',
                 projects: 'مشروع منجز',
                 mobile: 'تطبيق موبايل',
-                web: 'موقع ويب'
+                web: 'منصة ويب ومؤسسة'
             },
             strengths: {
-                problemSolving: 'حل المشكلات',
-                problemDesc: 'تطوير حلول للمشكلات المعقدة أدت إلى زيادة الكفاءة بنسبة 90%',
-                teamwork: 'العمل الجماعي',
-                teamDesc: 'التعاون مع فرق متعددة التخصصات لإنجاز المشاريع ضمن المواعيد المحددة',
-                attention: 'الاهتمام بالتفاصيل',
-                attentionDesc: 'تطبيق منهجيات اختبار صارمة تحقق كود خالي من الأخطاء بنسبة 99%',
-                clean: 'كود نظيف',
-                cleanDesc: 'كتابة كود نظيف وفعال وقابل للصيانة مع اتباع أفضل الممارسات'
+                problemSolving: 'حل الهندسي للمشكلات',
+                problemDesc: 'تطوير خوارزميات وأنظمة رفعت الكفاءة التشغيلية بنسبة 90%',
+                teamwork: 'القيادة والعمل الجماعي',
+                teamDesc: 'إدارة وتوجيه فرق العمل لإنجاز المشاريع المعقدة بأعلى درجات الاحترافية',
+                attention: 'الدقة وضبط الجودة',
+                attentionDesc: 'اختبارات برمجية دقيقة تضمن استقرار الأنظمة وكود خالٍ من الأخطاء',
+                clean: 'معمارية كود نظيفة',
+                cleanDesc: 'كتابة كود نظيف، مرن وقابل للتوسع المستقبلي وفق أفضل الممارسات العالمية'
             }
         },
 
-        // Skills Section (title only - data in cv.json)
+        // Skills Section
         skills: {
-            tag: '02',
-            title: 'المهارات'
+            title: 'المهارات والتقنيات'
         },
 
-        // Experience Section (title only - data in cv.json)
+        // Experience Section
         experience: {
-            tag: '03',
-            title: 'الخبرات'
+            title: 'الخبرات والمسيرة'
         },
 
-        // Projects Section (titles only - data in projects.json)
+        // Projects Section
         projects: {
-            tag: '04',
-            title: 'المشاريع',
-            intro: 'مجموعة من المشاريع التي قمت بتطويرها للسوق السعودي واليمني. اضغط على أي مشروع لاستعراض التفاصيل والصور.',
+            title: 'معرض المشاريع والأنظمة',
+            intro: 'نخبة من المشاريع والأنظمة المؤسسية وتطبيقات الجوال والذكاء الاصطناعي التي قمت بتطويرها. اضغط على أي مشروع لاستعراض التفاصيل الكاملة.',
+            searchPlaceholder: 'ابحث عن مشروع، تقنية (مثل: Laravel, Flutter, AI)...',
             filters: {
                 all: 'الكل',
-                web: 'تطبيقات ويب',
-                mobile: 'تطبيقات موبايل',
-                ai: 'ذكاء اصطناعي'
+                web: 'تطبيقات الويب',
+                mobile: 'تطبيقات الموبايل',
+                enterprise: 'أنظمة مؤسسية',
+                ai: 'الذكاء الاصطناعي'
             },
-            viewProject: 'عرض المشروع'
+            viewProject: 'استعراض التفاصيل'
         },
 
-        // Contact Section (labels only - data in cv.json)
+        // Contact Section
         contact: {
-            tag: '05',
             title: 'تواصل معي',
-            heading: 'لنعمل معاً',
-            description: 'هل لديك مشروع في ذهنك؟ أنا متاح للعمل على مشاريع مثيرة. تواصل معي لنبدأ الحديث!',
+            heading: 'هل لديك مشروع أو فرصة عمل؟',
+            description: 'أنا جاهز دائماً لبناء وتطوير الأفكار والأنظمة الاحترافية. تواصل معي مباشرة لبدء التعاون!',
             email: 'البريد الإلكتروني',
-            phone: 'الهاتف',
-            whatsapp: 'واتساب',
-            chatNow: 'تواصل الآن',
-            location: 'الموقع',
-            ctaTitle: 'مستعد لبدء مشروعك؟',
-            ctaDesc: 'احصل على استشارة مجانية لمشروعك القادم',
-            startChat: 'ابدأ المحادثة'
+            phone: 'الهاتف المباشر',
+            whatsapp: 'المحادثة عبر واتساب',
+            chatNow: 'تواصل فوراً',
+            location: 'الموقع الجغرافي',
+            ctaTitle: 'جاهز لبدء مشروعك القادم؟',
+            ctaDesc: 'احصل على استشارة تقنية ودراسة لمشروعك الآن',
+            startChat: 'تواصل عبر واتساب'
         },
 
         // Footer
         footer: {
-            tagline: 'مطور برمجيات متكامل',
+            tagline: 'Senior Full-Stack & Mobile Software Engineer',
             copyright: 'جميع الحقوق محفوظة.'
         },
 
         // Modal
         modal: {
-            close: 'إغلاق'
+            close: 'إغلاق',
+            techStack: 'التقنيات المستخدمة / Tech Stack',
+            discussBtn: 'تواصل لمناقشة مشروع مشابه',
+            readmeBtn: 'تحميل التوثيق البرمجي (README.md)',
+            counterSep: 'من'
         },
 
         // PDF CV
         pdf: {
-            downloadBtn: 'تحميل السيرة الذاتية',
+            downloadBtn: 'تحميل السيرة الذاتية PDF',
             fileName: 'Akram_Abdullah_CV_AR',
-            title: 'السيرة الذاتية',
+            title: 'السيرة الذاتية الاحترافية',
             contact: 'معلومات التواصل',
-            summary: 'نبذة مختصرة',
-            skills: 'المهارات التقنية',
-            experience: 'الخبرات العملية',
-            education: 'التعليم',
-            present: 'الآن'
+            summary: 'الملخص المهني',
+            skills: 'المهارات والتقنيات',
+            experience: 'الخبرات والمسيرة',
+            education: 'المؤهل الأكاديمي',
+            present: 'حتى الآن'
         }
     },
 
@@ -128,11 +129,11 @@ const TRANSLATIONS = {
         // Navigation
         nav: {
             home: 'Home',
-            about: 'About',
+            about: 'About Me',
             skills: 'Skills',
             experience: 'Experience',
             projects: 'Projects',
-            contact: 'Contact'
+            contact: 'Contact Me'
         },
 
         // Hero Section
@@ -140,106 +141,107 @@ const TRANSLATIONS = {
             greeting: "Hi, I'm",
             firstName: 'Akram',
             lastName: 'Abdullah',
-            titlePrefix: 'Developer',
-            description: 'I build integrated software solutions for web and mobile using the latest technologies.',
+            titlePrefix: 'Software',
+            description: 'Senior Software Engineer specializing in scalable enterprise web, cross-platform mobile, and AI solutions.',
             yearsExp: 'years',
-            expSuffix: 'of experience developing advanced systems for Saudi and global markets.',
-            btnProjects: 'Explore My Work',
+            expSuffix: 'of engineering experience crafting enterprise systems for Saudi and international markets.',
+            btnProjects: 'Explore Portfolio',
             btnContact: 'Get in Touch',
-            available: 'Available for Work',
+            available: 'Available for Hire & Projects',
             scrollMore: 'Discover More'
         },
 
         // About Section
         about: {
-            tag: '01',
             title: 'About Me',
-            heading: 'Full-Stack Software Developer',
-            desc1: 'As a professional Full-Stack developer, I specialize in building advanced software solutions for web, mobile, and desktop platforms. I master programming languages like Dart, PHP, HTML, CSS, with extensive experience in frameworks like Laravel and database management using MySQL.',
-            desc2: 'I have successfully delivered high-impact projects for the Saudi market and international clients, focusing on creating robust and scalable systems, including secure authentication systems, real-time data synchronization, and high-performance API design.',
-            security: 'Advanced Security',
-            realtime: 'Real-time Systems',
-            cleanCode: 'Clean Code',
+            heading: 'Senior Full-Stack & Mobile Engineer',
+            desc1: 'Senior Software Engineer with 7+ years of expertise delivering high-performance web, mobile, and enterprise platforms. Specialized in Laravel, Livewire, Flutter, Node.js, MySQL, and Firebase.',
+            desc2: 'Delivered 30+ production systems for enterprise, medical, fintech, and commercial sectors across Saudi Arabia, Yemen, and the Gulf, focusing on security, performance, and scalability.',
+            security: 'Advanced Encryption & Security',
+            realtime: 'High-Concurrency Real-time Systems',
+            cleanCode: 'Clean Architecture & Maintainable Code',
             stats: {
                 years: 'Years Experience',
-                projects: 'Projects Completed',
-                mobile: 'Mobile Apps',
-                web: 'Websites'
+                projects: 'Projects Delivered',
+                mobile: 'Mobile Applications',
+                web: 'Web & Enterprise Systems'
             },
             strengths: {
-                problemSolving: 'Problem Solving',
-                problemDesc: 'Developing solutions for complex problems that increased efficiency by 90%',
-                teamwork: 'Teamwork',
-                teamDesc: 'Collaborating with multidisciplinary teams to deliver projects on schedule',
-                attention: 'Attention to Detail',
-                attentionDesc: 'Applying rigorous testing methodologies achieving 99% bug-free code',
-                clean: 'Clean Code',
-                cleanDesc: 'Writing clean, efficient, and maintainable code following best practices'
+                problemSolving: 'Architectural Problem Solving',
+                problemDesc: 'Engineered backend pipelines driving 90%+ operational efficiency gains',
+                teamwork: 'Technical Leadership',
+                teamDesc: 'Collaborated with cross-functional teams delivering complex software on schedule',
+                attention: 'Precision & Code Quality',
+                attentionDesc: 'Rigorous test-driven workflows maintaining 99%+ stable codebase',
+                clean: 'Clean Architecture',
+                cleanDesc: 'Writing clean, modular, and maintainable software adhering to global standards'
             }
         },
 
-        // Skills Section (title only - data in cv.json)
+        // Skills Section
         skills: {
-            tag: '02',
-            title: 'Skills'
+            title: 'Skills & Technologies'
         },
 
-        // Experience Section (title only - data in cv.json)
+        // Experience Section
         experience: {
-            tag: '03',
-            title: 'Experience'
+            title: 'Experience & Career'
         },
 
-        // Projects Section (titles only - data in projects.json)
+        // Projects Section
         projects: {
-            tag: '04',
-            title: 'Projects',
-            intro: 'A collection of projects I developed for the Saudi and Yemeni markets. Click on any project to view details and screenshots.',
+            title: 'Featured Projects & Systems',
+            intro: 'A curated showcase of enterprise platforms, mobile applications, and AI integrations built for regional and global clients. Click any card to inspect full details.',
+            searchPlaceholder: 'Search project, technology (e.g. Laravel, Flutter, AI)...',
             filters: {
                 all: 'All',
                 web: 'Web Apps',
                 mobile: 'Mobile Apps',
-                ai: 'AI'
+                enterprise: 'Enterprise ERP',
+                ai: 'AI & Automation'
             },
-            viewProject: 'View Project'
+            viewProject: 'Inspect Details'
         },
 
-        // Contact Section (labels only - data in cv.json)
+        // Contact Section
         contact: {
-            tag: '05',
             title: 'Contact Me',
-            heading: "Let's Work Together",
-            description: "Have a project in mind? I'm available to work on exciting projects. Contact me to start the conversation!",
-            email: 'Email',
-            phone: 'Phone',
-            whatsapp: 'WhatsApp',
+            heading: "Let's Build Something Great",
+            description: "Ready to take your product to the next level? I'm available for senior technical roles and high-impact freelance projects.",
+            email: 'Direct Email',
+            phone: 'Phone Number',
+            whatsapp: 'WhatsApp Business',
             chatNow: 'Chat Now',
             location: 'Location',
-            ctaTitle: 'Ready to start your project?',
-            ctaDesc: 'Get a free consultation for your next project',
-            startChat: 'Start Chat'
+            ctaTitle: 'Ready to launch your project?',
+            ctaDesc: 'Get technical consultation and architectural insights',
+            startChat: 'Connect on WhatsApp'
         },
 
         // Footer
         footer: {
-            tagline: 'Full-Stack Software Developer',
+            tagline: 'Senior Full-Stack & Mobile Software Engineer',
             copyright: 'All rights reserved.'
         },
 
         // Modal
         modal: {
-            close: 'Close'
+            close: 'Close',
+            techStack: 'Tech Stack & Frameworks',
+            discussBtn: 'Discuss Similar Project',
+            readmeBtn: 'Download Tech Specs (README.md)',
+            counterSep: 'of'
         },
 
         // PDF CV
         pdf: {
-            downloadBtn: 'Download CV',
+            downloadBtn: 'Download Resume (PDF)',
             fileName: 'Akram_Abdullah_CV_EN',
             title: 'Curriculum Vitae',
-            contact: 'Contact Information',
-            summary: 'Professional Summary',
-            skills: 'Technical Skills',
-            experience: 'Work Experience',
+            contact: 'Contact Info',
+            summary: 'Executive Summary',
+            skills: 'Technical Expertise',
+            experience: 'Work History',
             education: 'Education',
             present: 'Present'
         }

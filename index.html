@@ -1,41 +1,47 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="أكرم عبدالله عبدالله - مطور برمجيات متخصص في تطبيقات الويب والموبايل. خبرة في Laravel, Flutter, Firebase والمزيد.">
+        content="أكرم عبدالله - مهندس ومطور برمجيات أول متخصص في تطبيقات الويب والموبايل والأنظمة المؤسسية. خبرة في Next.js, Laravel, Flutter, AI Integration.">
     <meta name="keywords"
-        content="مطور برمجيات، Full Stack Developer, Laravel, Flutter, Web Development, Mobile Apps, السعودية">
+        content="مطور برمجيات، Senior Software Engineer, Full Stack Developer, Laravel, Next.js, Flutter, AI, Web Development, Mobile Apps, Saudi Arabia">
     <meta name="author" content="Akram Abdullah Alhashedi">
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="أكرم عبدالله - مطور برمجيات">
-    <meta property="og:description" content="مطور Full-Stack متخصص في Laravel و Flutter مع خبرة +7 سنوات">
+    <meta property="og:title" content="أكرم عبدالله | Senior Software Engineer">
+    <meta property="og:description" content="مطور Full-Stack & Mobile أول متخصص في بناء الأنظمة المعقدة والتطبيقات بالسعودية والخليج">
     <meta property="og:type" content="website">
 
-    <title>أكرم عبدالله | مطور برمجيات</title>
+    <title>أكرم عبدالله | Senior Software Engineer</title>
 
-    <!-- Font Awesome -->
+    <!-- Google Fonts: Tajawal & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Animated Background -->
+    <!-- Animated Glowing Ambient Canvas -->
     <div class="animated-bg">
         <div class="gradient-orb orb-1"></div>
         <div class="gradient-orb orb-2"></div>
         <div class="gradient-orb orb-3"></div>
+        <div class="gradient-orb orb-4"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">
-                <span class="logo-text" data-i18n="hero.firstName">أكرم</span>
+                <span class="logo-text">Akram<span class="logo-highlight">.Dev</span></span>
                 <span class="logo-dot"></span>
             </a>
 
@@ -44,6 +50,7 @@
                 <span></span>
                 <span></span>
             </button>
+
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active" data-i18n="nav.home">الرئيسية</a></li>
                 <li><a href="#about" class="nav-link" data-i18n="nav.about">من أنا</a></li>
@@ -53,178 +60,187 @@
                 <li><a href="#contact" class="nav-link" data-i18n="nav.contact">تواصل معي</a></li>
             </ul>
 
-            <!-- Language Switcher - At the end -->
-            <button class="lang-switcher" id="langSwitcher" aria-label="Switch Language">
-                <i class="fas fa-globe"></i>
-                <span class="lang-current">EN</span>
-            </button>
+            <div class="nav-actions">
+                <!-- Theme Switcher -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <!-- Language Switcher -->
+                <button class="lang-switcher" id="langSwitcher" aria-label="Switch Language" title="Switch Language">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-current">EN</span>
+                </button>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-image-wrapper">
-                <div class="hero-image-ring"></div>
-                <div class="hero-image-ring ring-2"></div>
-                <img src="assets/profile_img.png" alt="أكرم عبدالله" class="hero-image">
-                <div class="hero-status">
-                    <span class="status-dot"></span>
-                    <span data-i18n="hero.available">متاح للعمل</span>
+    <section id="home" class="hero section">
+        <div class="container hero-container">
+            <div class="hero-grid">
+                <!-- Hero Copy -->
+                <div class="hero-text-col reveal-left">
+                    <div class="hero-badge">
+                        <span class="pulse-icon"></span>
+                        <span data-i18n="hero.available">متاح للمشاريع والعمل المحترف</span>
+                    </div>
+
+                    <h1 class="hero-main-title">
+                        <span class="greeting" data-i18n="hero.greeting">مرحباً، أنا</span>
+                        <span class="name-gradient"><span data-i18n="hero.firstName">أكرم</span> <span data-i18n="hero.lastName">عبدالله</span></span>
+                    </h1>
+
+                    <div class="hero-typewriter-box" id="heroTitleContainer">
+                        <span class="typewriter-prefix" id="titlePrefix" data-i18n="hero.titlePrefix">مطور</span>
+                        <span class="typewriter-dynamic" id="dynamicTitle">Full-Stack Architect</span>
+                    </div>
+
+                    <p class="hero-bio" data-i18n="hero.description">
+                        مهندس برمجيات أول متخصص في بناء المنظومات المؤسسية المعقدة، الويب والموبايل والحلول الذكية بأعلى معايير الجودة والأمان.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary-glow">
+                            <i class="fas fa-rocket"></i>
+                            <span data-i18n="hero.btnProjects">استكشف الأعمال</span>
+                        </a>
+                        <a href="#contact" class="btn btn-glass">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-i18n="hero.btnContact">تواصل معي</span>
+                        </a>
+                        <button id="downloadCVBtn" class="btn btn-outline-glow">
+                            <i class="fas fa-file-pdf"></i>
+                            <span data-i18n="pdf.downloadBtn">تحميل السيرة الذاتية PDF</span>
+                        </button>
+                    </div>
+
+                    <div class="hero-social-strip">
+                        <a href="#" class="social-chip" target="_blank" rel="noopener" id="heroWhatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="#" class="social-chip" id="heroEmail">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        <a href="#" class="social-chip" id="heroPhone">
+                            <i class="fas fa-phone"></i> Phone
+                        </a>
+                        <a href="#" class="social-chip" target="_blank" rel="noopener" id="heroGithub">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-text">
-                <span class="hero-greeting" data-i18n="hero.greeting">مرحباً، أنا</span>
-                <h1 class="hero-name">
-                    <span class="name-first" data-i18n="hero.firstName">أكرم</span>
-                    <span class="name-last" data-i18n="hero.lastName">عبدالله</span>
-                </h1>
-                <div class="hero-title" id="heroTitleContainer">
-                    <span class="title-prefix" id="titlePrefix" data-i18n="hero.titlePrefix">مطور</span>
-                    <span class="title-dynamic" id="dynamicTitle">Full-Stack</span>
-                </div>
-                <p class="hero-description">
-                    <span data-i18n="hero.description">أبني حلولاً برمجية متكاملة للويب والموبايل باستخدام أحدث
-                        التقنيات.</span>
-                    <span class="highlight">+<span id="heroYears">7</span> <span
-                            data-i18n="hero.yearsExp">سنوات</span></span> <span data-i18n="hero.expSuffix">من الخبرة في
-                        تطوير أنظمة متقدمة للسوق السعودي والعالمي.</span>
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        <span data-i18n="hero.btnProjects">استكشف أعمالي</span>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i>
-                        <span data-i18n="hero.btnContact">تواصل معي</span>
-                    </a>
-                    <button id="downloadCVBtn" class="btn btn-cv-download">
-                        <i class="fas fa-file-pdf"></i>
-                        <span data-i18n="pdf.downloadBtn">تحميل السيرة الذاتية</span>
-                    </button>
-                </div>
-                <div class="hero-quick-links" id="heroQuickLinks">
-                    <a href="#" class="social-link" target="_blank" rel="noopener" id="heroWhatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="#" class="social-link" id="heroEmail">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="#" class="social-link" id="heroPhone">
-                        <i class="fas fa-phone"></i>
-                    </a>
-                    <a href="#" class="social-link" target="_blank" rel="noopener" id="heroGithub">
-                        <i class="fab fa-github"></i>
-                    </a>
+
+                <!-- Hero Interactive Visual Column -->
+                <div class="hero-visual-col reveal-right">
+                    <div class="avatar-card-wrapper">
+                        <div class="avatar-glow-ring"></div>
+                        <div class="avatar-frame">
+                            <img src="assets/profile_img.png" alt="أكرم عبدالله" class="avatar-img">
+                        </div>
+
+                        <!-- Floating Tech Skill Chips -->
+                        <div class="floating-tech-chip chip-1">
+                            <i class="fab fa-react"></i>
+                            <span>Next.js 16</span>
+                        </div>
+                        <div class="floating-tech-chip chip-2">
+                            <i class="fab fa-laravel"></i>
+                            <span>Laravel</span>
+                        </div>
+                        <div class="floating-tech-chip chip-3">
+                            <i class="fas fa-mobile-screen-button"></i>
+                            <span>Flutter</span>
+                        </div>
+                        <div class="floating-tech-chip chip-4">
+                            <i class="fas fa-robot"></i>
+                            <span>AI Integration</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
+
+        <a href="#about" class="scroll-down-btn" aria-label="Scroll Down">
             <span data-i18n="hero.scrollMore">اكتشف المزيد</span>
             <i class="fas fa-chevron-down"></i>
-        </div>
+        </a>
     </section>
 
-    <!-- About Section -->
+    <!-- About & Bento Stats Section -->
     <section id="about" class="about section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag" data-i18n="about.tag">01</span>
+            <div class="section-header reveal-up">
                 <h2 class="section-title" data-i18n="about.title">من أنا</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="about-content">
-                <div class="about-text glass-card">
-                    <h3 class="about-heading" data-i18n="about.heading">مطور برمجيات متكامل</h3>
-                    <p class="about-description" data-i18n="about.desc1">
-                        كمطور Full-Stack محترف، أتخصص في بناء حلول برمجية متطورة لمنصات الويب والموبايل وسطح المكتب.
-                        أتقن لغات البرمجة مثل Dart, PHP, HTML, CSS، مع خبرة واسعة في أطر العمل مثل Laravel وإدارة قواعد
-                        البيانات باستخدام MySQL.
+
+            <!-- Bento Layout -->
+            <div class="bento-grid">
+                <!-- Bio Card (Spans 2 Columns) -->
+                <div class="bento-card bio-bento glass-card reveal-up">
+                    <div class="bento-icon"><i class="fas fa-user-gear"></i></div>
+                    <h3 class="bento-heading" data-i18n="about.heading">مهندس ومطور برمجيات متكامل (Senior Full-Stack)</h3>
+                    <p class="bento-desc" data-i18n="about.desc1">
+                        مطور برمجيات أول بخبرة تزيد عن 7 سنوات، أتخصص في تصميم وتطوير الأنظمة والتطبيقات المعقدة للويب والموبايل والمؤسسات. أتقن لغات وأطر عمل قوية مثل Laravel, Livewire, Flutter, Node.js, Next.js, MySQL, وFirebase.
                     </p>
-                    <p class="about-description" data-i18n="about.desc2">
-                        نجحت في تسليم مشاريع عالية التأثير للسوق السعودي وعملاء دوليين، وأركز على إنشاء أنظمة قوية
-                        وقابلة للتوسع،
-                        بما في ذلك أنظمة المصادقة الآمنة، ومزامنة البيانات في الوقت الفعلي، وتصميم APIs عالية الأداء.
+                    <p class="bento-desc" data-i18n="about.desc2">
+                        صممت وسلّمت أكثر من 30 مشروعاً ناجحاً في القطاعات التجارية والطبية والخدمية بالسوق السعودي واليمني والخليجي، مع التركيز التام على بنية الكود (Architecture)، الأمان، والسرعة الفائقة.
                     </p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <span data-i18n="about.security">أمان متقدم</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-sync-alt"></i>
-                            <span data-i18n="about.realtime">Real-time Systems</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-code"></i>
-                            <span data-i18n="about.cleanCode">كود نظيف</span>
-                        </div>
+                    <div class="bento-badges">
+                        <span class="bento-pill"><i class="fas fa-shield-halved"></i> <span data-i18n="about.security">أمان وتشفير متقدم</span></span>
+                        <span class="bento-pill"><i class="fas fa-bolt"></i> <span data-i18n="about.realtime">أنظمة Real-time قوية</span></span>
+                        <span class="bento-pill"><i class="fas fa-code-branch"></i> <span data-i18n="about.cleanCode">Clean Architecture</span></span>
                     </div>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-card glass-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <div class="stat-number" id="experienceYears" data-target="7">0</div>
-                        <div class="stat-label" data-i18n="about.stats.years">سنوات خبرة</div>
-                    </div>
-                    <div class="stat-card glass-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <div class="stat-number" data-target="30">0</div>
-                        <div class="stat-label" data-i18n="about.stats.projects">مشروع منجز</div>
-                    </div>
-                    <div class="stat-card glass-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <div class="stat-number" data-target="20">0</div>
-                        <div class="stat-label" data-i18n="about.stats.mobile">تطبيق موبايل</div>
-                    </div>
-                    <div class="stat-card glass-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div class="stat-number" data-target="10">0</div>
-                        <div class="stat-label" data-i18n="about.stats.web">موقع ويب</div>
-                    </div>
+
+                <!-- Stats Bento -->
+                <div class="bento-card stat-bento glass-card reveal-up" data-delay="100">
+                    <div class="stat-icon-wrap"><i class="fas fa-briefcase"></i></div>
+                    <div class="stat-val" id="experienceYears" data-target="7">7+</div>
+                    <div class="stat-title" data-i18n="about.stats.years">سنوات خبرة</div>
+                </div>
+
+                <div class="bento-card stat-bento glass-card reveal-up" data-delay="200">
+                    <div class="stat-icon-wrap"><i class="fas fa-diagram-project"></i></div>
+                    <div class="stat-val" data-target="30">30+</div>
+                    <div class="stat-title" data-i18n="about.stats.projects">مشروع منجز</div>
+                </div>
+
+                <div class="bento-card stat-bento glass-card reveal-up" data-delay="300">
+                    <div class="stat-icon-wrap"><i class="fas fa-mobile-screen-button"></i></div>
+                    <div class="stat-val" data-target="20">20+</div>
+                    <div class="stat-title" data-i18n="about.stats.mobile">تطبيق موبايل</div>
+                </div>
+
+                <div class="bento-card stat-bento glass-card reveal-up" data-delay="400">
+                    <div class="stat-icon-wrap"><i class="fas fa-server"></i></div>
+                    <div class="stat-val" data-target="10">10+</div>
+                    <div class="stat-title" data-i18n="about.stats.web">منصة ويب ومؤسسة</div>
                 </div>
             </div>
-            <div class="strengths-grid">
-                <div class="strength-card glass-card">
-                    <div class="strength-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h4 data-i18n="about.strengths.problemSolving">حل المشكلات</h4>
-                    <p data-i18n="about.strengths.problemDesc">تطوير حلول للمشكلات المعقدة أدت إلى زيادة الكفاءة بنسبة
-                        90%</p>
+
+            <!-- Strengths Cards Grid -->
+            <div class="strengths-grid mt-40">
+                <div class="strength-card glass-card reveal-up">
+                    <div class="strength-icon"><i class="fas fa-brain"></i></div>
+                    <h4 data-i18n="about.strengths.problemSolving">حل المشكلات الهندسي</h4>
+                    <p data-i18n="about.strengths.problemDesc">تطوير خوارزميات وأنظمة رفعت الكفاءة التشغيلية بنسبة 90%</p>
                 </div>
-                <div class="strength-card glass-card">
-                    <div class="strength-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h4 data-i18n="about.strengths.teamwork">العمل الجماعي</h4>
-                    <p data-i18n="about.strengths.teamDesc">التعاون مع فرق متعددة التخصصات لإنجاز المشاريع ضمن المواعيد
-                        المحددة</p>
+                <div class="strength-card glass-card reveal-up" data-delay="100">
+                    <div class="strength-icon"><i class="fas fa-users-gear"></i></div>
+                    <h4 data-i18n="about.strengths.teamwork">القيادة والعمل الجماعي</h4>
+                    <p data-i18n="about.strengths.teamDesc">إدارة وتوجيه فرق العمل لإنجاز المشاريع المعقدة بأعلى درجات الاحترافية</p>
                 </div>
-                <div class="strength-card glass-card">
-                    <div class="strength-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h4 data-i18n="about.strengths.attention">الاهتمام بالتفاصيل</h4>
-                    <p data-i18n="about.strengths.attentionDesc">تطبيق منهجيات اختبار صارمة تحقق كود خالي من الأخطاء
-                        بنسبة 99%</p>
+                <div class="strength-card glass-card reveal-up" data-delay="200">
+                    <div class="strength-icon"><i class="fas fa-microscope"></i></div>
+                    <h4 data-i18n="about.strengths.attention">الدقة وضبط الجودة</h4>
+                    <p data-i18n="about.strengths.attentionDesc">اختبارات برمجية دقيقة تضمن استقرار الأنظمة وكود خالٍ من الأخطاء</p>
                 </div>
-                <div class="strength-card glass-card">
-                    <div class="strength-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h4 data-i18n="about.strengths.clean">كود نظيف</h4>
-                    <p data-i18n="about.strengths.cleanDesc">كتابة كود نظيف وفعال وقابل للصيانة مع اتباع أفضل الممارسات
-                    </p>
+                <div class="strength-card glass-card reveal-up" data-delay="300">
+                    <div class="strength-icon"><i class="fas fa-cubes"></i></div>
+                    <h4 data-i18n="about.strengths.clean">معمارية كود نظيفة</h4>
+                    <p data-i18n="about.strengths.cleanDesc">كتابة كود نظيف، مرن وقابل للتوسع المستقبلي وفق أفضل الممارسات العالمية</p>
                 </div>
             </div>
         </div>
@@ -233,64 +249,69 @@
     <!-- Skills Section -->
     <section id="skills" class="skills section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag" data-i18n="skills.tag">02</span>
-                <h2 class="section-title" data-i18n="skills.title">المهارات</h2>
+            <div class="section-header reveal-up">
+                <h2 class="section-title" data-i18n="skills.title">المهارات والتقنيات</h2>
                 <div class="section-line"></div>
             </div>
             <div class="skills-content">
-                <!-- Skills Grid - Generated dynamically from cv-data.js -->
                 <div class="skills-grid" id="skillsGrid">
-                    <!-- Skills will be loaded by JavaScript -->
+                    <!-- Loaded dynamically via script.js from cv-data.js -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Timeline Section -->
     <section id="experience" class="experience section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag" data-i18n="experience.tag">03</span>
-                <h2 class="section-title" data-i18n="experience.title">الخبرات</h2>
+            <div class="section-header reveal-up">
+                <h2 class="section-title" data-i18n="experience.title">الخبرات والمسيرة</h2>
                 <div class="section-line"></div>
             </div>
-            <!-- Timeline - Generated dynamically from cv-data.js -->
+
             <div class="timeline" id="experienceTimeline">
-                <!-- Experience items will be loaded by JavaScript -->
+                <!-- Loaded dynamically via script.js -->
             </div>
 
-            <!-- Education - Generated dynamically from cv-data.js -->
-            <div class="education-section" id="educationSection">
-                <!-- Education will be loaded by JavaScript -->
+            <div class="education-section mt-40" id="educationSection">
+                <!-- Loaded dynamically via script.js -->
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Portfolio Matrix Section -->
     <section id="projects" class="projects section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag" data-i18n="projects.tag">04</span>
-                <h2 class="section-title" data-i18n="projects.title">المشاريع</h2>
+            <div class="section-header reveal-up">
+                <h2 class="section-title" data-i18n="projects.title">معرض المشاريع والأنظمة</h2>
                 <div class="section-line"></div>
             </div>
-            <p class="projects-intro" data-i18n="projects.intro">
-                مجموعة من المشاريع التي قمت بتطويرها للسوق السعودي واليمني. اضغط على أي مشروع لاستعراض التفاصيل والصور.
+            <p class="projects-intro reveal-up" data-i18n="projects.intro">
+                نخبة من المشاريع والأنظمة المؤسسية وتطبيقات الجوال والذكاء الاصطناعي التي قمت بتطويرها. اضغط على أي مشروع لاستعراض التفاصيل الكاملة.
             </p>
 
-            <!-- Project Filters -->
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all" data-i18n="projects.filters.all">الكل</button>
-                <button class="filter-btn" data-filter="web" data-i18n="projects.filters.web">تطبيقات ويب</button>
-                <button class="filter-btn" data-filter="mobile" data-i18n="projects.filters.mobile">تطبيقات
-                    موبايل</button>
-                <button class="filter-btn" data-filter="ai" data-i18n="projects.filters.ai">ذكاء اصطناعي</button>
+            <!-- Projects Search & Filters Toolbar -->
+            <div class="projects-toolbar reveal-up">
+                <div class="project-search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="projectSearchInput" placeholder="ابحث عن مشروع، تقنية (مثل: Laravel, Flutter, AI)..." data-i18n-ph="projects.searchPlaceholder">
+                    <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear Search">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all" data-i18n="projects.filters.all">الكل</button>
+                    <button class="filter-btn" data-filter="web" data-i18n="projects.filters.web">تطبيقات الويب</button>
+                    <button class="filter-btn" data-filter="mobile" data-i18n="projects.filters.mobile">تطبيقات الموبايل</button>
+                    <button class="filter-btn" data-filter="enterprise" data-i18n="projects.filters.enterprise">أنظمة مؤسسية</button>
+                    <button class="filter-btn" data-filter="ai" data-i18n="projects.filters.ai">الذكاء الاصطناعي</button>
+                </div>
             </div>
 
-            <!-- Projects Grid - Generated dynamically from projects-data.js -->
-            <div class="projects-grid">
-                <!-- Projects will be loaded here by JavaScript -->
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Dynamically Populated by script.js -->
             </div>
         </div>
     </section>
@@ -298,69 +319,49 @@
     <!-- Contact Section -->
     <section id="contact" class="contact section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag" data-i18n="contact.tag">05</span>
+            <div class="section-header reveal-up">
                 <h2 class="section-title" data-i18n="contact.title">تواصل معي</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="contact-content">
-                <div class="contact-info glass-card">
-                    <h3 class="contact-heading" data-i18n="contact.heading">لنعمل معاً</h3>
-                    <p class="contact-description" data-i18n="contact.description">
-                        هل لديك مشروع في ذهنك؟ أنا متاح للعمل على مشاريع مثيرة. تواصل معي لنبدأ الحديث!
+            <div class="contact-grid">
+                <div class="contact-card glass-card reveal-left">
+                    <h3 class="contact-heading" data-i18n="contact.heading">هل لديك مشروع أو فرصة عمل؟</h3>
+                    <p class="contact-desc" data-i18n="contact.description">
+                        أنا جاهز دائماً لبناء وتطوير الأفكار والأنظمة الاحترافية. تواصل معي مباشرة لبدء التعاون!
                     </p>
                     <div class="contact-methods" id="contactMethods">
-                        <a href="#" class="contact-method" id="contactEmail">
-                            <div class="method-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="method-details">
-                                <span class="method-label" data-i18n="contact.email">البريد الإلكتروني</span>
-                                <span class="method-value" id="emailValue">...</span>
+                        <a href="#" class="method-item" id="contactEmail">
+                            <div class="method-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="method-info">
+                                <span class="label" data-i18n="contact.email">البريد الإلكتروني</span>
+                                <span class="val" id="emailValue">...</span>
                             </div>
                         </a>
-                        <a href="#" class="contact-method" id="contactPhone">
-                            <div class="method-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="method-details">
-                                <span class="method-label" data-i18n="contact.phone">الهاتف</span>
-                                <span class="method-value" dir="ltr" id="phoneValue">...</span>
+                        <a href="#" class="method-item" id="contactPhone">
+                            <div class="method-icon"><i class="fas fa-phone"></i></div>
+                            <div class="method-info">
+                                <span class="label" data-i18n="contact.phone">الهاتف المباشر</span>
+                                <span class="val" dir="ltr" id="phoneValue">...</span>
                             </div>
                         </a>
-                        <a href="#" class="contact-method" target="_blank" rel="noopener" id="contactWhatsapp">
-                            <div class="method-icon whatsapp">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div class="method-details">
-                                <span class="method-label" data-i18n="contact.whatsapp">واتساب</span>
-                                <span class="method-value" data-i18n="contact.chatNow">تواصل الآن</span>
+                        <a href="#" class="method-item whatsapp" target="_blank" rel="noopener" id="contactWhatsapp">
+                            <div class="method-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+                            <div class="method-info">
+                                <span class="label" data-i18n="contact.whatsapp">المحادثة عبر واتساب</span>
+                                <span class="val" data-i18n="contact.chatNow">تواصل فوراً</span>
                             </div>
                         </a>
-                        <div class="contact-method" id="contactLocation">
-                            <div class="method-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="method-details">
-                                <span class="method-label" data-i18n="contact.location">الموقع</span>
-                                <span class="method-value" id="locationValue">...</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div class="contact-cta glass-card">
-                    <div class="cta-content">
-                        <h3 data-i18n="contact.ctaTitle">مستعد لبدء مشروعك؟</h3>
-                        <p data-i18n="contact.ctaDesc">احصل على استشارة مجانية لمشروعك القادم</p>
-                        <a href="#" class="btn btn-primary btn-large cta-whatsapp-btn" target="_blank" rel="noopener"
-                            id="ctaWhatsappBtn">
+
+                <div class="contact-cta-box glass-card reveal-right">
+                    <div class="cta-inner">
+                        <h3 data-i18n="contact.ctaTitle">جاهز لبدء مشروعك القادم؟</h3>
+                        <p data-i18n="contact.ctaDesc">احصل على استشارة تقنية ودراسة لمشروعك الآن</p>
+                        <a href="#" class="btn btn-primary-glow btn-lg" target="_blank" rel="noopener" id="ctaWhatsappBtn">
                             <i class="fab fa-whatsapp"></i>
-                            <span data-i18n="contact.startChat">ابدأ المحادثة</span>
+                            <span data-i18n="contact.startChat">تواصل عبر واتساب</span>
                         </a>
-                    </div>
-                    <div class="cta-decoration">
-                        <div class="decoration-circle"></div>
-                        <div class="decoration-circle circle-2"></div>
                     </div>
                 </div>
             </div>
@@ -370,67 +371,88 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-row">
                 <div class="footer-brand">
-                    <span class="footer-logo" data-i18n="hero.firstName">أكرم</span> <span
-                        data-i18n="hero.lastName">عبدالله</span>
-                    <p class="footer-tagline" data-i18n="footer.tagline">مطور برمجيات متكامل</p>
+                    <span class="footer-logo">Akram<span class="logo-highlight">.Dev</span></span>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Senior Full-Stack & Mobile Software Engineer</p>
                 </div>
                 <div class="footer-social" id="footerSocial">
-                    <a href="#" class="social-link" target="_blank" rel="noopener" id="footerWhatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="#" class="social-link" id="footerEmail">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="#" class="social-link" target="_blank" rel="noopener" id="footerGithub">
-                        <i class="fab fa-github"></i>
-                    </a>
+                    <a href="#" class="social-chip" target="_blank" rel="noopener" id="footerWhatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-chip" id="footerEmail"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="social-chip" target="_blank" rel="noopener" id="footerGithub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <span id="copyrightYear">2024</span> <span data-i18n="hero.firstName">أكرم</span> <span
-                        data-i18n="hero.lastName">عبدالله</span>. <span data-i18n="footer.copyright">جميع الحقوق
-                        محفوظة.</span></p>
+                <p>&copy; <span id="copyrightYear">2026</span> Akram Abdullah. <span data-i18n="footer.copyright">جميع الحقوق محفوظة.</span></p>
             </div>
         </div>
     </footer>
 
-    <!-- Project Modal -->
+    <!-- Floating WhatsApp Action CTA -->
+    <a href="https://wa.me/966504550864" class="floating-whatsapp-btn" target="_blank" rel="noopener" title="WhatsApp Chat">
+        <i class="fab fa-whatsapp"></i>
+        <span class="floating-tooltip">تواصل عبر واتساب</span>
+    </a>
+
+    <!-- REDESIGNED FULL-WIDTH CAROUSEL PROJECT DETAILS MODAL -->
     <div class="project-modal" id="projectModal">
         <div class="modal-overlay"></div>
-        <div class="modal-container">
-            <button class="modal-close" id="modalClose">
+        <div class="modal-dialog glass-card">
+            <button class="modal-close-btn" id="modalClose" aria-label="Close modal">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="modal-content">
-                <div class="modal-gallery">
-                    <div class="gallery-main">
-                        <button class="gallery-nav prev" id="galleryPrev">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                        <img src="" alt="" class="gallery-image" id="galleryImage">
-                        <button class="gallery-nav next" id="galleryNext">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                    </div>
-                    <div class="gallery-thumbnails" id="galleryThumbnails">
-                        <!-- Thumbnails will be generated by JS -->
-                    </div>
-                    <div class="gallery-counter">
-                        <span id="currentSlide">1</span> / <span id="totalSlides">1</span>
+
+            <div class="modal-header-row">
+                <span class="modal-category-badge" id="modalCategoryBadge">Web Application</span>
+                <h2 class="modal-project-title" id="modalTitle"></h2>
+            </div>
+
+            <!-- Top Showcase Gallery Container -->
+            <div class="modal-showcase-container">
+                <div class="gallery-viewport" id="galleryViewport">
+                    <div class="blur-bg-backdrop" id="galleryBlurBg"></div>
+                    <img src="" alt="" class="gallery-main-img" id="galleryImage">
+                    <button class="gallery-arrow prev" id="galleryPrev" aria-label="Previous Image"><i class="fas fa-chevron-right"></i></button>
+                    <button class="gallery-arrow next" id="galleryNext" aria-label="Next Image"><i class="fas fa-chevron-left"></i></button>
+                    <div class="gallery-counter-badge">
+                        <span id="currentSlide">1</span> <span id="counterSep">من</span> <span id="totalSlides">1</span>
                     </div>
                 </div>
-                <div class="modal-info">
-                    <h2 class="modal-title" id="modalTitle"></h2>
-                    <p class="modal-description" id="modalDescription"></p>
-                    <div class="modal-tags" id="modalTags"></div>
+                <!-- Smooth Horizontal Scroll Thumbnail Strip -->
+                <div class="gallery-thumbs-strip" id="galleryThumbnails">
+                    <!-- Generated by JS -->
+                </div>
+            </div>
+
+            <!-- Bottom Details Grid -->
+            <div class="modal-details-grid">
+                <div class="modal-desc-col">
+                    <div class="modal-desc-body" id="modalDescription"></div>
+                </div>
+
+                <div class="modal-meta-col">
+                    <div class="modal-section-title">
+                        <i class="fas fa-layer-group"></i>
+                        <span data-i18n="modal.techStack">التقنيات المستخدمة / Tech Stack</span>
+                    </div>
+                    <div class="modal-tags-wrapper" id="modalTags"></div>
+                </div>
+
+                <div class="modal-actions-row">
+                    <a href="https://wa.me/966504550864" target="_blank" rel="noopener" class="btn btn-primary-glow btn-sm">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-i18n="modal.discussBtn">تواصل لمناقشة مشروع مشابه</span>
+                    </a>
+                    <a href="#" id="modalReadmeBtn" download class="btn btn-secondary-glass btn-sm">
+                        <i class="fas fa-file-code"></i>
+                        <span data-i18n="modal.readmeBtn">تحميل التوثيق (README.md)</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- pdfmake-rtl for PDF generation with Arabic RTL support -->
+    <!-- PDF Support Libraries -->
     <script src="https://unpkg.com/@digicole/pdfmake-rtl/build/pdfmake.min.js"></script>
     <script src="https://unpkg.com/@digicole/pdfmake-rtl/build/vfs_fonts.js"></script>
 

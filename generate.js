@@ -104,6 +104,41 @@ function generateProjectsData() {
         // Build image paths relative to root
         const imagePaths = images.map(img => `assets/${folder}/${img}`);
 
+        // Handle README file generation/detection
+        const readmeFilePath = path.join(folderPath, 'README.md');
+        if (!fs.existsSync(readmeFilePath)) {
+            const titleEn = typeof meta.title === 'object' ? (meta.title.en || folder) : meta.title;
+            const titleAr = typeof meta.title === 'object' ? (meta.title.ar || folder) : meta.title;
+            const descEn = typeof meta.description === 'object' ? (meta.description.en || '') : meta.description;
+            const descAr = typeof meta.description === 'object' ? (meta.description.ar || '') : meta.description;
+            const tagsList = (meta.tags || []).join(', ');
+
+            const readmeContent = `# ${titleEn}
+> ${titleAr}
+
+## Executive Summary / الملخص التنفيذي
+${descEn}
+
+${descAr}
+
+## Technical Architecture & Highlights
+- **Category**: ${meta.category}
+- **Tech Stack**: ${tagsList}
+- **Status**: Production Deployment
+
+## Core Capabilities
+- Enterprise-grade architecture with focus on high performance, security, and scalability.
+- Cross-platform responsiveness and clean user interface workflows.
+- Modular codebase structured following industry best practices.
+
+---
+*Built & Engineered by Akram Abdullah (Senior Software Engineer)*
+`;
+            fs.writeFileSync(readmeFilePath, readmeContent, 'utf8');
+        }
+
+        const relativeReadmePath = `assets/${folder}/README.md`;
+
         // Handle both old format (string) and new format (object with ar/en)
         const title = typeof meta.title === 'object' ? meta.title : { ar: meta.title, en: meta.title };
         const description = typeof meta.description === 'object' ? meta.description : { ar: meta.description, en: meta.description };
@@ -116,10 +151,11 @@ function generateProjectsData() {
             category: meta.category,
             tags: meta.tags || [],
             images: imagePaths,
-            thumbnail: imagePaths[0]
+            thumbnail: imagePaths[0],
+            readme: relativeReadmePath
         };
 
-        console.log(`✅ ${folder}: ${images.length} images`);
+        console.log(`✅ ${folder}: ${images.length} images | README attached`);
     }
 
     // Write to JavaScript file
