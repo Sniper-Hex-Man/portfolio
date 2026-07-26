@@ -1,4 +1,4 @@
-# 🤖 AI-Powered Content Automation & Publishing Platform
+﻿# 🤖 AI-Powered Content Automation & Publishing Platform
 > **منصة أتمتة صناعة المحتوى والنشر الذكي على وسائل التواصل الاجتماعي**
 
 ---

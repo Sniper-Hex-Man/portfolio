@@ -1,4 +1,4 @@
-# ✂️ Darz - Smart Tailoring Ecosystem
+﻿# ✂️ Darz - Smart Tailoring Ecosystem
 > **نظام وتطبيق "درز" لإدارة محلات الخياطة وتسهيل تفصيل الأثواب في السوق السعودي**
 
 ---

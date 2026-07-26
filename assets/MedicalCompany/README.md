@@ -1,4 +1,4 @@
-# 📊 Enterprise Pharma & Medical Warehouse Executive BI System
+﻿# 📊 Enterprise Pharma & Medical Warehouse Executive BI System
 > **منظومة التقارير التنفيذية والتحليلات الإدارية المتقدمة لمستودعات وشركات الأدوية (Pharma & Medical Distribution ERP/BI)**
 
 ---

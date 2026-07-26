@@ -1,4 +1,4 @@
-# 🏛️ Abu Dawood Charity Foundation Digital Platform
+﻿# 🏛️ Abu Dawood Charity Foundation Digital Platform
 > **الموقع الرسمي والأنظمة الإدارية لجمعية أبو داوود الخيرية – جدة**
 
 ---

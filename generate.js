@@ -113,7 +113,7 @@ function generateProjectsData() {
             const descAr = typeof meta.description === 'object' ? (meta.description.ar || '') : meta.description;
             const tagsList = (meta.tags || []).join(', ');
 
-            const readmeContent = `# ${titleEn}
+            const readmeContent = '\uFEFF' + `# ${titleEn}
 > ${titleAr}
 
 ## Executive Summary / الملخص التنفيذي

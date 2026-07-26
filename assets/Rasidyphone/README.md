@@ -1,4 +1,4 @@
-# 📱 Rasidy Phone - Mobile Recharge & Digital Services Ecosystem
+﻿# 📱 Rasidy Phone - Mobile Recharge & Digital Services Ecosystem
 > **تطبيق رصيدي فون لشحن الرصيد والخدمات الرقمية مع لوحة تحكم متكاملة**
 
 ---

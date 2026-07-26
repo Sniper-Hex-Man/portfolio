@@ -449,8 +449,8 @@ function openProjectModal(key) {
     const modalReadmeBtn = document.getElementById('modalReadmeBtn');
     if (modalReadmeBtn) {
         if (currentProject.readme) {
-            modalReadmeBtn.href = currentProject.readme;
-            modalReadmeBtn.setAttribute('download', `${key}_README.md`);
+            modalReadmeBtn.setAttribute('data-readme', currentProject.readme);
+            modalReadmeBtn.setAttribute('data-filename', `${key}_README.md`);
             modalReadmeBtn.style.display = 'inline-flex';
         } else {
             modalReadmeBtn.style.display = 'none';
@@ -668,6 +668,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prevBtn) prevBtn.addEventListener('click', prevGalleryImage);
     if (nextBtn) nextBtn.addEventListener('click', nextGalleryImage);
 
+    // README Download Button Listener (UTF-8 BOM Protection for Mobile Devices)
+    const modalReadmeBtn = document.getElementById('modalReadmeBtn');
+    if (modalReadmeBtn) {
+        modalReadmeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const readmeUrl = modalReadmeBtn.getAttribute('data-readme');
+            const fileName = modalReadmeBtn.getAttribute('data-filename') || 'README.md';
+            if (readmeUrl) {
+                downloadReadmeFile(readmeUrl, fileName);
+            }
+        });
+    }
+
     // Keyboard Navigation for Modal
     document.addEventListener('keydown', (e) => {
         const modal = document.getElementById('projectModal');
@@ -682,5 +695,45 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollObserver();
     initStatsCounter();
 });
+
+// ================================
+// UTF-8 Mobile-Safe README Downloader
+// ================================
+async function downloadReadmeFile(readmeUrl, fileName) {
+    const BOM = '\uFEFF';
+    try {
+        const response = await fetch(readmeUrl);
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        let text = await response.text();
+
+        // Prepend UTF-8 Byte Order Mark (BOM) to force mobile text viewers to render Arabic correctly
+        if (!text.startsWith(BOM)) {
+            text = BOM + text;
+        }
+
+        const blob = new Blob([text], { type: 'text/markdown;charset=utf-8' });
+        const blobUrl = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+
+        setTimeout(() => {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(blobUrl);
+        }, 300);
+    } catch (err) {
+        console.warn('Direct fetch failed for README download, using direct link fallback:', err);
+        const a = document.createElement('a');
+        a.href = readmeUrl;
+        a.download = fileName;
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => document.body.removeChild(a), 300);
+    }
+}
 
 console.log('🚀 Akram Abdullah Senior Portfolio Engine V2 Fully Loaded!');

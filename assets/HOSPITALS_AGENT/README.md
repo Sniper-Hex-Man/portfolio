@@ -1,4 +1,4 @@
-# 🩺 AI-Powered Healthcare Agent & Hospital ERP System
+﻿# 🩺 AI-Powered Healthcare Agent & Hospital ERP System
 > **نظام إدارة المجمعات الطبية المكتمل مع شات بوت الذكاء الاصطناعي التفاعلي**
 
 ---

@@ -1,4 +1,4 @@
-# 🔍 Lost & Found Community Mobile Platform
+﻿# 🔍 Lost & Found Community Mobile Platform
 > **تطبيق وموقع المفقودات التفاعلي لربط العاثرين بالأصحاب**
 
 ---

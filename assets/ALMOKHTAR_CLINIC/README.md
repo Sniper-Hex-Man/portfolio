@@ -1,4 +1,4 @@
-# 🏥 Al-Mokhtar Healthcare & Clinical Management Platform
+﻿# 🏥 Al-Mokhtar Healthcare & Clinical Management Platform
 > **المنصة الإلكترونية والنظام الإداري لمجمع المختار الطبي وتتبع الجلسات**
 
 ---
