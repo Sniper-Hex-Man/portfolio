@@ -610,23 +610,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSwitcher = document.getElementById('langSwitcher');
     if (langSwitcher) langSwitcher.addEventListener('click', toggleLanguage);
 
-    // Navbar Toggle (Mobile)
+    // Navbar Toggle & Auto-Close Logic (Mobile)
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
+
+    function closeMobileMenu() {
+        if (navMenu && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+        }
+    }
+
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             navMenu.classList.toggle('active');
+        });
+
+        // Close menu on clicking any navigation link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+
+        // Close menu on clicking outside navbar
+        document.addEventListener('click', (e) => {
+            const navbar = document.getElementById('navbar');
+            if (navbar && !navbar.contains(e.target)) {
+                closeMobileMenu();
+            }
         });
     }
 
-    // Scroll Navbar Effect
+    // Scroll Navbar Effect & Close Mobile Menu on Scroll
     window.addEventListener('scroll', () => {
         const navbar = document.getElementById('navbar');
         if (navbar) {
             if (window.scrollY > 40) navbar.classList.add('scrolled');
             else navbar.classList.remove('scrolled');
         }
-    });
+        // Auto-close dropdown menu on scroll
+        closeMobileMenu();
+    }, { passive: true });
 
     // Project Filters Listeners
     document.querySelectorAll('.filter-btn').forEach(btn => {
